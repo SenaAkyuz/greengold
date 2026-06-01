@@ -169,53 +169,20 @@ const CF_FLIGHT_KM = { short: 1500, long: 6000 }; // representative one-way dist
     els.forEach(el=>io.observe(el));
   })();
 
-  // ---------- Carbon Footprint Calculator (modal, DEFRA UK 2025) ----------
+  // ---------- Carbon Footprint Calculator (page, DEFRA UK 2025) ----------
   (function(){
-    const opener = document.getElementById('cfcOpen');
-    const modal  = document.getElementById('cfcModal');
-    if(!opener || !modal) return;                 // only on pages that have the widget
-    const closeBtn = modal.querySelector('.cfc-close');
-    const overlay  = modal.querySelector('[data-cfc-overlay]');
-    const total    = modal.querySelector('#cfcTotal');
-    const totalT   = modal.querySelector('#cfcTotalT');
-    let lastFocus = null;
+    const total = document.getElementById('cfcTotal');
+    if(!total) return;                       // calculator not on this page
+    const totalT = document.getElementById('cfcTotalT');
     let cfcChart = null;
     const CFC_COLORS = ['#5cb85c','#f4d03f','#f5a623','#9aa0a6','#4a90e2'];
     const CFC_LABELS = ['Car','Electricity','Natural Gas','Waste','Flights'];
-
-    const num = id => { const el = modal.querySelector('#'+id); const v = el ? parseFloat(el.value) : 0; return (isFinite(v) && v > 0) ? v : 0; };
-    const carType = () => { const el = modal.querySelector('#cfcCarType'); return el ? el.value : 'petrol'; };
-
-    function recalc(){
-      const vehicle     = num('cfcCarKm') * (CF_FACTORS.vehicle[carType()] || 0);
-      const electricity = num('cfcElec') * 12 * CF_FACTORS.electricity;
-      const naturalGas  = num('cfcGas')  * 12 * CF_FACTORS.naturalGas;
-      const waste       = num('cfcWaste') * 52 * CF_FACTORS.waste;
-      const flights     = num('cfcShort') * CF_FLIGHT_KM.short * CF_FACTORS.flightShortPerKm
-                        + num('cfcLong')  * CF_FLIGHT_KM.long  * CF_FACTORS.flightLongPerKm;
-      const kg = vehicle + electricity + naturalGas + waste + flights; // all categories summed
-      if(total)  total.textContent = Math.round(kg).toLocaleString('en-US');
-      if(totalT) totalT.innerHTML = '≈ ' + (kg/1000).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' t CO<sub>2</sub>/year';
-      if(cfcChart){ cfcChart.data.datasets[0].data = [vehicle, electricity, naturalGas, waste, flights]; cfcChart.update(); }
-    }
-
-    modal.querySelectorAll('.cfc-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        modal.querySelectorAll('.cfc-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
-        const key = tab.dataset.cfcTab;
-        modal.querySelectorAll('.cfc-panel').forEach(p => p.classList.toggle('active', p.dataset.cfcPanel === key));
-      });
-    });
-    modal.querySelectorAll('.cfc-input, .cfc-select').forEach(el => {
-      el.addEventListener('input', recalc);
-      el.addEventListener('change', recalc);
-    });
+    const num = id => { const el = document.getElementById(id); const v = el ? parseFloat(el.value) : 0; return (isFinite(v) && v > 0) ? v : 0; };
+    const carType = () => { const el = document.getElementById('cfcCarType'); return el ? el.value : 'petrol'; };
 
     function initChart(){
       if(cfcChart || typeof Chart === 'undefined') return;
-      const cv = modal.querySelector('#cfcChart');
-      if(!cv) return;
+      const cv = document.getElementById('cfcChart'); if(!cv) return;
       cfcChart = new Chart(cv, {
         type: 'pie',
         data: { labels: CFC_LABELS, datasets: [{ data: [0,0,0,0,0], backgroundColor: CFC_COLORS, borderColor: '#fff', borderWidth: 2 }] },
@@ -229,21 +196,31 @@ const CF_FLIGHT_KM = { short: 1500, long: 6000 }; // representative one-way dist
       });
     }
 
-    function onKey(e){
-      if(e.key === 'Escape'){ closeModal(); return; }
-      if(e.key === 'Tab'){
-        const list = [...modal.querySelectorAll('button, select, input, a[href]')].filter(el => !el.disabled && el.offsetParent !== null);
-        if(!list.length) return;
-        const first = list[0], last = list[list.length - 1];
-        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
-      }
+    function recalc(){
+      const vehicle     = num('cfcCarKm') * (CF_FACTORS.vehicle[carType()] || 0);
+      const electricity = num('cfcElec') * 12 * CF_FACTORS.electricity;
+      const naturalGas  = num('cfcGas')  * 12 * CF_FACTORS.naturalGas;
+      const waste       = num('cfcWaste') * 52 * CF_FACTORS.waste;
+      const flights     = num('cfcShort') * CF_FLIGHT_KM.short * CF_FACTORS.flightShortPerKm
+                        + num('cfcLong')  * CF_FLIGHT_KM.long  * CF_FACTORS.flightLongPerKm;
+      const kg = vehicle + electricity + naturalGas + waste + flights; // all categories summed
+      total.textContent = Math.round(kg).toLocaleString('en-US');
+      if(totalT) totalT.innerHTML = '≈ ' + (kg/1000).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' t CO<sub>2</sub>/year';
+      if(cfcChart){ cfcChart.data.datasets[0].data = [vehicle, electricity, naturalGas, waste, flights]; cfcChart.update(); }
     }
-    function openModal(e){ if(e) e.preventDefault(); lastFocus = document.activeElement; modal.classList.add('open'); document.body.style.overflow = 'hidden'; initChart(); recalc(); if(closeBtn) closeBtn.focus(); document.addEventListener('keydown', onKey); }
-    function closeModal(){ modal.classList.remove('open'); document.body.style.overflow = ''; document.removeEventListener('keydown', onKey); if(lastFocus) lastFocus.focus(); }
 
-    opener.addEventListener('click', openModal);
-    if(closeBtn) closeBtn.addEventListener('click', closeModal);
-    if(overlay)  overlay.addEventListener('click', closeModal);
+    document.querySelectorAll('.cfc-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.cfc-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+        const key = tab.dataset.cfcTab;
+        document.querySelectorAll('.cfc-panel').forEach(p => p.classList.toggle('active', p.dataset.cfcPanel === key));
+      });
+    });
+    document.querySelectorAll('.cfc-input, .cfc-select').forEach(el => {
+      el.addEventListener('input', recalc);
+      el.addEventListener('change', recalc);
+    });
+    initChart();
     recalc();
   })();

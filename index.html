@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Greengold — Corporate Carbon Measurement & Sustainability Platform</title>
 <link rel="stylesheet" href="styles.css" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -74,7 +73,7 @@
 <div class="tools">
   <div class="container">
     <span class="tools__label">QUICK TOOLS</span>
-    <a href="#" id="cfcOpen"><span class="ico">●</span> Carbon Footprint Calculator</a>
+    <a href="carbon-footprint-calculator.html"><span class="ico">●</span> Carbon Footprint Calculator</a>
     <a href="#"><span class="ico">●</span> Carbon Price Index</a>
     <a href="#"><span class="ico">●</span> ESG Score Lookup</a>
     <a href="#"><span class="ico">●</span> Sector Benchmarking</a>
@@ -702,87 +701,6 @@
     </div>
   </div>
 </footer>
-
-<!-- =================== CARBON FOOTPRINT CALCULATOR (MODAL) =================== -->
-<div class="cfc-modal" id="cfcModal" role="dialog" aria-modal="true" aria-labelledby="cfcTitle">
-  <div class="cfc-modal__overlay" data-cfc-overlay></div>
-  <div class="cfc-dialog">
-    <div class="cfc-dialog__head">
-      <h3 class="cfc-dialog__title" id="cfcTitle">Carbon Footprint Calculator</h3>
-      <button class="cfc-close" type="button" aria-label="Close">&times;</button>
-    </div>
-    <div class="cfc-body">
-      <div class="cfc-pane">
-        <div class="cfc-tabs" role="tablist" aria-label="Footprint category">
-          <button class="cfc-tab active" type="button" role="tab" aria-selected="true" data-cfc-tab="vehicle">🚗 Vehicle</button>
-          <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="electricity">⚡ Electricity</button>
-          <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="gas">🔥 Natural Gas</button>
-          <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="waste">🗑️ Waste</button>
-          <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="flights">✈️ Flights</button>
-        </div>
-
-        <div class="cfc-panel active" data-cfc-panel="vehicle">
-          <div class="cfc-field">
-            <label for="cfcCarType">Car type</label>
-            <select id="cfcCarType" class="cfc-select">
-              <option value="petrol">Petrol</option>
-              <option value="diesel">Diesel</option>
-              <option value="hybrid">Hybrid</option>
-              <option value="electric">Electric</option>
-            </select>
-          </div>
-          <div class="cfc-field">
-            <label for="cfcCarKm">Kilometers per year</label>
-            <input id="cfcCarKm" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 12000" value="12000">
-          </div>
-        </div>
-
-        <div class="cfc-panel" data-cfc-panel="electricity">
-          <div class="cfc-field">
-            <label for="cfcElec">Electricity use per month (kWh)</label>
-            <input id="cfcElec" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 300" value="300">
-          </div>
-        </div>
-
-        <div class="cfc-panel" data-cfc-panel="gas">
-          <div class="cfc-field">
-            <label for="cfcGas">Natural gas use per month (kWh)</label>
-            <input id="cfcGas" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 500" value="500">
-          </div>
-        </div>
-
-        <div class="cfc-panel" data-cfc-panel="waste">
-          <div class="cfc-field">
-            <label for="cfcWaste">General waste per week (kg)</label>
-            <input id="cfcWaste" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 8" value="8">
-          </div>
-        </div>
-
-        <div class="cfc-panel" data-cfc-panel="flights">
-          <div class="cfc-row2">
-            <div class="cfc-field">
-              <label for="cfcShort">Short-haul flights / year</label>
-              <input id="cfcShort" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="0" value="2">
-            </div>
-            <div class="cfc-field">
-              <label for="cfcLong">Long-haul flights / year</label>
-              <input id="cfcLong" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="0" value="1">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cfc-result" aria-live="polite">
-        <div class="cfc-result__icon">🌍</div>
-        <div class="cfc-result__label">Total CO<sub>2</sub> Footprint</div>
-        <div class="cfc-result__big"><span id="cfcTotal">0</span> <span class="cfc-result__unit">kg CO<sub>2</sub>/year</span></div>
-        <div class="cfc-result__t" id="cfcTotalT">≈ 0.0 t CO<sub>2</sub>/year</div>
-        <div class="cfc-chart"><canvas id="cfcChart"></canvas></div>
-        <div class="cfc-result__note">Calculations are based on DEFRA UK Government Emission Factors 2025.</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="script.js" defer></script>
 

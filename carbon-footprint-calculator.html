@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carbon Footprint Calculator — Green Gold Foundation</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- =================== TOP BAR =================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="#">Resources</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="right">
+      <a href="#">Demo Line: 0850 000 33 33</a>
+      <a href="#" class="lang-switch">TR</a>
+      <a href="#" class="lang-switch active">EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="header">
+  <div class="container header__bar">
+    <a href="index.html" class="logo" lang="en" aria-label="Green Gold Foundation">
+      <img class="logo__img" src="logo_final_r1.avif" alt="Green Gold Foundation" width="46" height="46">
+      <span class="logo__word">GREEN GOLD<span>FOUNDATION</span></span>
+    </a>
+
+    <div class="seg" role="tablist" aria-label="Company type">
+      <button class="active" data-tab="kobi">SME</button>
+      <button data-tab="kurumsal">ENTERPRISE</button>
+    </div>
+
+    <nav class="nav" aria-label="Main menu">
+      <ul>
+        <li><a href="climate-membership.html">Climate Membership</a></li>
+        <li><a href="#">Projects <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">PROJECTS</span>
+              <h5>Green Gold Foundation impact projects</h5>
+              <p>Explore our flagship sustainability initiatives across mobility and hospitality.</p>
+              <a class="btn btn--dark" href="wings.html">Discover</a>
+            </div>
+            <div class="col-list">
+              <h4>Our Projects</h4>
+              <a href="wings.html">Green Gold Wings</a>
+              <a href="wheels.html">Green Gold Wheels</a>
+              <a href="stay.html">Green Gold Stay</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="carbon-credits.html">Carbon Credits</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__cta">
+      <a href="#" class="btn btn--ghost">Request Demo</a>
+      <a href="#" class="btn btn--primary">Log In</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block cfcpage-top">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">TOOL</span>
+        <h1>Carbon Footprint <strong>Calculator</strong></h1>
+        <p>Measure your estimated annual CO<sub>2</sub> emissions across vehicle, energy, waste, and flights.</p>
+      </div>
+      <div class="cfc-card">
+        <div class="cfc-body">
+          <div class="cfc-pane">
+            <div class="cfc-tabs" role="tablist" aria-label="Footprint category">
+              <button class="cfc-tab active" type="button" role="tab" aria-selected="true" data-cfc-tab="vehicle">🚗 Vehicle</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="electricity">⚡ Electricity</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="gas">🔥 Natural Gas</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="waste">🗑️ Waste</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="flights">✈️ Flights</button>
+            </div>
+
+            <div class="cfc-panel active" data-cfc-panel="vehicle">
+              <div class="cfc-field">
+                <label for="cfcCarType">Car type</label>
+                <select id="cfcCarType" class="cfc-select">
+                  <option value="petrol">Petrol</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="electric">Electric</option>
+                </select>
+              </div>
+              <div class="cfc-field">
+                <label for="cfcCarKm">Kilometers per year</label>
+                <input id="cfcCarKm" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 12000" value="12000">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="electricity">
+              <div class="cfc-field">
+                <label for="cfcElec">Electricity use per month (kWh)</label>
+                <input id="cfcElec" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 300" value="300">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="gas">
+              <div class="cfc-field">
+                <label for="cfcGas">Natural gas use per month (kWh)</label>
+                <input id="cfcGas" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 500" value="500">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="waste">
+              <div class="cfc-field">
+                <label for="cfcWaste">General waste per week (kg)</label>
+                <input id="cfcWaste" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="e.g. 8" value="8">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="flights">
+              <div class="cfc-row2">
+                <div class="cfc-field">
+                  <label for="cfcShort">Short-haul flights / year</label>
+                  <input id="cfcShort" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="0" value="2">
+                </div>
+                <div class="cfc-field">
+                  <label for="cfcLong">Long-haul flights / year</label>
+                  <input id="cfcLong" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="0" value="1">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfc-result" aria-live="polite">
+            <div class="cfc-result__icon">🌍</div>
+            <div class="cfc-result__label">Total CO<sub>2</sub> Footprint</div>
+            <div class="cfc-result__big"><span id="cfcTotal">0</span> <span class="cfc-result__unit">kg CO<sub>2</sub>/year</span></div>
+            <div class="cfc-result__t" id="cfcTotalT">≈ 0.0 t CO<sub>2</sub>/year</div>
+            <div class="cfc-chart"><canvas id="cfcChart"></canvas></div>
+            <div class="cfc-result__note">Calculations are based on DEFRA UK Government Emission Factors 2025.</div>
+          </div>
+        </div>
+      </div>
+      <p class="cfc-foot-note">Calculations are based on DEFRA UK Government Emission Factors 2025.</p>
+      <!-- SEO content sections (intro, what it measures, why, methodology, FAQ, CTA) to be added later -->
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="logo">
+          <img class="logo__img" src="logo_final_r1.avif" alt="Green Gold Foundation" width="46" height="46">
+          <span class="logo__word">GREEN GOLD<span>FOUNDATION</span></span>
+        </div>
+        <p>A corporate carbon measurement, ESG reporting, and sustainability transformation platform for companies. We measure, report, and reduce.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="GitHub">{ }</a>
+        </div>
+      </div>
+      <div>
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="#">Carbon Measurement</a></li>
+          <li><a href="#">ESG Reporting</a></li>
+          <li><a href="#">Net Zero Roadmap</a></li>
+          <li><a href="#">Carbon Credit Market</a></li>
+          <li><a href="#">Green Finance Access</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#">Frequently Asked Questions</a></li>
+          <li><a href="#">Sustainability Academy</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Industry Reports</a></li>
+          <li><a href="#">Developer Documentation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Mission &amp; Impact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Greengold Carbon Intelligence — All rights reserved.</div>
+      <div class="legal">
+        <a href="#">Legal Notice</a>
+        <a href="#">Privacy &amp; Data Protection</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
