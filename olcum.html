@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karbon Ölçüm Platformu — Greengold</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- =================== TOP BAR =================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="index.html">Anasayfa</a>
+      <a href="#">Kaynaklar</a>
+      <a href="#">Bize Ulaşın</a>
+    </div>
+    <div class="right">
+      <a href="#">Demo Hattı: 0850 000 33 33</a>
+      <a href="#" class="lang-switch active">TR</a>
+      <a href="#" class="lang-switch">EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="header">
+  <div class="container header__bar">
+    <a href="index.html" class="logo" aria-label="Greengold anasayfa">
+      <div class="logo__mark">G</div>
+      <div>
+        <div class="logo__text">Green<span>gold</span></div>
+        <span class="logo__sub">Carbon Intelligence</span>
+      </div>
+    </a>
+
+    <div class="seg" role="tablist" aria-label="Şirket tipi">
+      <button class="active" data-tab="kobi">KOBİ</button>
+      <button data-tab="kurumsal">KURUMSAL</button>
+    </div>
+
+    <nav class="nav" aria-label="Ana menü">
+      <ul>
+        <li><a href="olcum.html" style="border-bottom-color:var(--green)">Karbon Ölçüm</a></li>
+        <li><a href="#">ESG Raporlama</a></li>
+        <li><a href="#">Net Zero</a></li>
+        <li class="highlight"><a href="pazar.html">Karbon Kredisi</a></li>
+        <li><a href="fiyatlandirma.html">Fiyatlandırma</a></li>
+        <li><a href="#">Danışmanlık</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__cta">
+      <a href="#" class="btn btn--ghost">Demo İste</a>
+      <a href="#" class="btn btn--primary">Giriş Yap</a>
+    </div>
+  </div>
+</header>
+
+<!-- =================== SUBHERO =================== -->
+<section class="subhero">
+  <div class="container subhero__inner">
+    <div class="crumb"><a href="index.html">Anasayfa</a> &nbsp;›&nbsp; Karbon Ölçüm Platformu</div>
+    <h1>Şirketinizin karbon izini <strong>tek platformdan</strong> ölçün</h1>
+    <p>Scope 1, 2 ve 3 emisyonlarınızı GHG Protocol ve ISO 14064 ile uyumlu olarak otomatik hesaplayın. ERP, fatura, sayaç ve tedarikçi anketi — tek veri akışı, denetime hazır rapor. <em style="color:#7be6cd;font-style:normal;font-weight:600">Measure once, manage everywhere.</em></p>
+    <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap">
+      <a href="index.html#calc" class="btn btn--gold" style="padding:14px 26px;font-size:15px">Ücretsiz Hesapla</a>
+      <a href="#" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4);padding:14px 26px;font-size:15px">15 Dakikalık Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== OUTCOME STATS =================== -->
+<section class="block" style="padding-top:56px;padding-bottom:24px">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:18px">
+      <span class="eyebrow">By the numbers</span>
+      <h2>Müşterilerimizin <strong>tipik sonuçları</strong></h2>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome">
+        <div class="big">3 <small>gün</small></div>
+        <div class="lbl">İlk Scope 1+2 baseline'a kadar</div>
+      </div>
+      <div class="outcome">
+        <div class="big">%72</div>
+        <div class="lbl">Manuel veri girişinde azalma</div>
+      </div>
+      <div class="outcome">
+        <div class="big">95<small>+</small></div>
+        <div class="lbl">Sektör emisyon faktörü</div>
+      </div>
+      <div class="outcome">
+        <div class="big">12 <small>çerçeve</small></div>
+        <div class="lbl">Otomatik raporlama uyumu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SCOPES =================== -->
+<section class="block" style="padding-top:48px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Three scopes, one platform</span>
+      <h2>Üç scope, <strong>tek bütünlük</strong></h2>
+      <p>GHG Protocol Corporate Standard'a göre tüm kapsamları takip edin — bağlı şirketleri ve operasyonel sınırları otomatik yönetin.</p>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-card s1">
+        <span class="pct">~ %18</span>
+        <div class="num">SCOPE 1</div>
+        <h3>Doğrudan emisyonlar</h3>
+        <p class="summary">Şirketinizin sahip olduğu veya kontrol ettiği kaynaklardan çıkan doğrudan sera gazı emisyonları.</p>
+        <ul>
+          <li>Sabit yanma (kazan, jeneratör)</li>
+          <li>Hareketli yanma (filo araçları)</li>
+          <li>Süreç emisyonları (üretim)</li>
+          <li>Kaçak emisyonlar (soğutucu, F‑gaz)</li>
+        </ul>
+      </div>
+      <div class="scope-card s2">
+        <span class="pct">~ %24</span>
+        <div class="num">SCOPE 2</div>
+        <h3>Enerji kaynaklı</h3>
+        <p class="summary">Satın alınan elektrik, ısı, soğutma ve buhardan kaynaklanan dolaylı emisyonlar.</p>
+        <ul>
+          <li>Elektrik (location‑based)</li>
+          <li>Elektrik (market‑based, REC dahil)</li>
+          <li>Bölgesel ısıtma / soğutma</li>
+          <li>Buhar &amp; sıkıştırılmış hava</li>
+        </ul>
+      </div>
+      <div class="scope-card s3">
+        <span class="pct">~ %58</span>
+        <div class="num">SCOPE 3</div>
+        <h3>Değer zinciri</h3>
+        <p class="summary">Şirketin değer zincirinde yukarı ve aşağı yönde meydana gelen tüm dolaylı emisyonlar — 15 kategori.</p>
+        <ul>
+          <li>Satın alınan ürün &amp; hizmetler</li>
+          <li>İş seyahati &amp; çalışan ulaşımı</li>
+          <li>Atık &amp; ambalaj yönetimi</li>
+          <li>Satılan ürün kullanımı &amp; ömür sonu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROCESS TIMELINE =================== -->
+<section class="block" style="background:var(--bg-soft);padding-top:80px;padding-bottom:80px">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start">
+    <div>
+      <span class="eyebrow" style="display:inline-block;font-size:11.5px;font-weight:700;color:var(--green-dark);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px">Onboarding journey</span>
+      <h2 style="font-size:34px;font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:14px">Sıfırdan canlı panele <strong style="font-weight:700;color:var(--green-dark)">14 günde</strong></h2>
+      <p style="color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:24px">Standart onboarding süremiz iki haftadan az. Daha kapsamlı kurumsal projeler için 6 haftalık bir uçtan uca implementasyon ekibi atıyoruz.</p>
+      <a href="#" class="btn btn--primary">Onboarding Planı İste →</a>
+    </div>
+    <div class="process">
+      <div class="process-item">
+        <h4>Keşif &amp; Sınır Belirleme <span class="dur">1‑2 gün</span></h4>
+        <p>Operasyonel sınır, raporlama dönemi ve hedef çerçeveler (CSRD, TSRS, CDP) belirlenir. Yan kuruluş yapısı modellenir.</p>
+      </div>
+      <div class="process-item">
+        <h4>Veri Bağlantıları <span class="dur">3‑5 gün</span></h4>
+        <p>SAP, Oracle, Logo, Netsis, IFS gibi ERP'lerden, EPDK enerji portalından ve OCR fatura akışından otomatik veri kanalları açılır.</p>
+      </div>
+      <div class="process-item">
+        <h4>Hesaplama &amp; Doğrulama <span class="dur">2‑3 gün</span></h4>
+        <p>İlk baseline hesaplanır. Greengold AI verideki tutarsızlıkları işaretler, doğrulamak için tek tıkla geçilir.</p>
+      </div>
+      <div class="process-item">
+        <h4>Canlı Yayın &amp; Eğitim <span class="dur">2 gün</span></h4>
+        <p>Panel takıma açılır, 90 dakikalık eğitim ile sürdürülebilirlik birimi bağımsız çalışmaya başlar. Ek destek için canlı sohbet aktif.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CAPABILITY MATRIX =================== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Capabilities &amp; standards</span>
+      <h2>Hangi <strong>özellikler</strong> hangi planda?</h2>
+      <p>Tüm planlar GHG Protocol uyumlu temel ölçümü içerir. İhtiyaçlarınıza göre derinleşin.</p>
+    </div>
+
+    <div class="capmatrix">
+      <table>
+        <thead>
+          <tr>
+            <th>Özellik</th>
+            <th>Starter</th>
+            <th>Growth</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Scope 1 &amp; 2 ölçümü</b></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Scope 3 — temel kategoriler (1, 6, 7)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Scope 3 — 15 kategorinin tamamı</td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>ERP / muhasebe entegrasyonu</td><td><span class="partial">1 sistem</span></td><td><span class="partial">3 sistem</span></td><td><span class="yes">∞</span></td></tr>
+          <tr><td>OCR fatura okuma</td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>IoT enerji sayaç bağlantısı</td><td><span class="no">×</span></td><td><span class="partial">10 cihaz</span></td><td><span class="yes">∞</span></td></tr>
+          <tr><td>Tedarikçi anket modülü (Scope 3)</td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>CDP, CSRD, TSRS rapor şablonları</td><td><span class="partial">CDP</span></td><td><span class="yes">3 çerçeve</span></td><td><span class="yes">12+ çerçeve</span></td></tr>
+          <tr><td>SBTi yol haritası &amp; senaryo modelleme</td><td><span class="no">×</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Üçüncü taraf doğrulama (verification) desteği</td><td><span class="no">×</span></td><td><span class="partial">+ücret</span></td><td><span class="yes">✓ dahil</span></td></tr>
+          <tr><td>Karbon kredisi pazar yeri erişimi</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓ özel fiyat</span></td></tr>
+          <tr><td>Dedicated Customer Success Manager</td><td><span class="no">×</span></td><td><span class="no">×</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>API &amp; özel entegrasyon</td><td><span class="no">×</span></td><td><span class="partial">REST</span></td><td><span class="yes">REST + Webhook + GraphQL</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== INDUSTRIES =================== -->
+<section class="block" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Tailored to your industry</span>
+      <h2>Sektörünüze <strong>özel modüller</strong></h2>
+      <p>Her sektörün hesaplama detayı farklı — Greengold sizinkine doğmuş gibi gelir.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card">
+        <div class="emoji">✈️</div>
+        <h4>Havacılık</h4>
+        <span class="stat">+ Wings Modülü</span>
+        <p>Yolcu‑km, yakıt‑mil, SAF (sürdürülebilir havacılık yakıtı) izleme. CORSIA uyumlu raporlama.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">🚚</div>
+        <h4>Lojistik &amp; Filo</h4>
+        <span class="stat">+ Wheels Modülü</span>
+        <p>Araç‑bazlı yakıt takibi, GLEC çerçevesi, tonkilometre, soğuk zincir, EV geçiş senaryosu.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">🏨</div>
+        <h4>Konaklama &amp; Turizm</h4>
+        <span class="stat">+ Stay Modülü</span>
+        <p>Oda‑gecesi başına emisyon, HCMI metodolojisi, su‑enerji‑atık entegre takibi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">🏭</div>
+        <h4>Üretim &amp; Sanayi</h4>
+        <span class="stat">95+ alt sektör</span>
+        <p>Süreç emisyonları, ürün karbon ayak izi (PCF), yaşam döngüsü analizi (LCA), CBAM hazırlığı.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">🏦</div>
+        <h4>Finans &amp; Bankacılık</h4>
+        <span class="stat">PCAF metodolojisi</span>
+        <p>Finanse edilen emisyonlar (Scope 3.15), portföy ısı haritası, sürdürülebilirlik bağlantılı kredi izleme.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">🛒</div>
+        <h4>Perakende &amp; e‑Ticaret</h4>
+        <span class="stat">SKU bazlı</span>
+        <p>Kategori bazlı tedarik zinciri analizi, ambalaj &amp; kargo, ürün etiketleme için PCF üretimi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">⚡</div>
+        <h4>Enerji &amp; Utilities</h4>
+        <span class="stat">EU ETS desteği</span>
+        <p>Üretim portföy karışımı, emission factor calibration, ETS uyum, yeşil sertifika (REC/I-REC) yönetimi.</p>
+      </div>
+      <div class="ind-card">
+        <div class="emoji">🏗️</div>
+        <h4>İnşaat &amp; Gayrimenkul</h4>
+        <span class="stat">Embodied carbon</span>
+        <p>Yapı malzemesi karbonu, LEED/BREEAM uyum, gömülü karbon (Scope 3.2) ve operasyonel ayrım.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CALCULATOR TEASER =================== -->
+<section class="block">
+  <div class="container">
+    <div class="cta-panel">
+      <div>
+        <span style="display:inline-block;font-size:12px;font-weight:700;color:var(--gold-light);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px">Try it now · Ücretsiz</span>
+        <h3>Karbon ayak izinizi <strong>15 dakikada</strong> tahmin edin</h3>
+        <p>Sektör + enerji tüketimi + çalışan sayısı bilgileriyle ön‑tahmin alın. Ardından isterseniz Greengold danışmanı sizi arayıp gerçek hesaplamaya geçişi planlasın.</p>
+        <div class="cta-panel__btns">
+          <a href="index.html#calc" class="btn btn--gold" style="padding:14px 26px">Hesaplayıcıyı Kullan →</a>
+          <a href="#" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4);padding:14px 26px">Detaylı Demo Al</a>
+        </div>
+      </div>
+      <div class="cta-panel__viz">
+        <h5>Demo: Üretim sektörü · 120 kişi</h5>
+        <div class="row"><span>Yıllık enerji (kWh)</span><span class="v">500.000</span></div>
+        <div class="row"><span>Scope 1 emisyon</span><span class="v">82,5 tCO₂e</span></div>
+        <div class="row"><span>Scope 2 emisyon</span><span class="v">230,0 tCO₂e</span></div>
+        <div class="row"><span>Scope 3 (tahmini)</span><span class="v">147,5 tCO₂e</span></div>
+        <div class="row" style="border-top:2px solid rgba(255,255,255,.3);margin-top:8px;padding-top:14px"><span style="font-weight:700">Toplam</span><span class="v" style="font-size:18px">460,0 tCO₂e</span></div>
+        <div class="row"><span>Çalışan başına</span><span class="v">3,83 tCO₂e</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section class="block" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>Karbon ölçümü <strong>hakkında</strong></h2>
+    </div>
+    <div class="faq" id="faq">
+      <div class="faq__item">
+        <button class="faq__q">Hangi metodolojiyi temel alıyorsunuz?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Tüm hesaplamalar GHG Protocol Corporate Standard ve Scope 3 Standard ile uyumludur. ISO 14064‑1 (Kuruluş Seviyesi Sera Gazı) ile çapraz referanslıdır. Sektörel olarak: PCAF (finans), GLEC (lojistik), HCMI (konaklama), CORSIA (havacılık), PAS 2050 (ürün) çerçeveleri desteklenir.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Emisyon faktörlerini nereden alıyorsunuz?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">DEFRA (UK), IPCC, EPA (US), EEA (EU) ve ülke sera gazı envanterleri (Türkiye TÜİK dahil) kaynaklarından, yıllık olarak güncellenen 95+ sektörel faktör kullanırız. Şirketinizin spesifik faktörlerini de yükleyebilir, hesaplamada öncelikli kullanılmasını sağlayabilirsiniz.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Verilerimi nasıl toplarım — manuel mi, otomatik mi?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Üç yol var: (1) Excel şablonu ile manuel yükleme, (2) ERP/muhasebe sisteminizden API otomatik çekme (SAP, Oracle, Logo, Netsis, Mikro ve daha fazlası hazır), (3) IoT sayaç ve OCR fatura okuma. Tipik müşterimiz Growth planında verisinin %72'sini otomatik kanaldan alır.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Yan kuruluşlar ve farklı tüzel kişilikler nasıl yönetiliyor?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Operasyonel kontrol, finansal kontrol ve eşit kontrol yaklaşımlarından birini seçerek konsolidasyon tanımlanır. Her yan kuruluş ayrı bir "tesis" olarak modellenir ve roll‑up otomatik yapılır. Ortak girişimler (JV) kısmi pay ile tanımlanabilir.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Üçüncü taraf doğrulama (assurance) destekliyor musunuz?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Evet. ISAE 3410 standardına göre limited veya reasonable assurance için doğrulayıcı (TÜV SÜD, BSI, DNV, Bureau Veritas) ile entegre çalışırız. Tüm hesaplama izleri, kaynak belgeler ve metodoloji notları doğrulayıcının görebileceği "audit room" alanında hazır olur.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">İlk hesaplama ne kadar sürer?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">KOBİ ölçeğinde 3‑5 gün içinde Scope 1 ve 2 baseline hazır olur. Çok lokasyonlu kurumsal şirketlerde 4‑6 hafta içinde tüm Scope 3 dahil edilebilir. Greengold'un AI veri doğrulama modülü süreyi tipik benzer projelere göre %60 kısaltır.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="logo">
+          <div class="logo__mark">G</div>
+          <div>
+            <div class="logo__text" style="color:#fff">Green<span style="color:var(--gold-light)">gold</span></div>
+            <span class="logo__sub" style="color:#7be6cd">Carbon Intelligence</span>
+          </div>
+        </div>
+        <p>Şirketler için kurumsal karbon ölçüm, ESG raporlama ve sürdürülebilirlik dönüşüm platformu. Ölçüyoruz, raporluyoruz, azaltıyoruz.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="GitHub">{ }</a>
+        </div>
+      </div>
+      <div>
+        <h5>Çözümler</h5>
+        <ul>
+          <li><a href="olcum.html">Karbon Ölçüm</a></li>
+          <li><a href="#">ESG Raporlama</a></li>
+          <li><a href="#">Net Zero Yol Haritası</a></li>
+          <li><a href="pazar.html">Karbon Kredisi Pazarı</a></li>
+          <li><a href="#">Yeşil Finansman Erişimi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kaynaklar</h5>
+        <ul>
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Sürdürülebilirlik Akademisi</a></li>
+          <li><a href="#">Vaka Çalışmaları</a></li>
+          <li><a href="#">Sektör Raporları</a></li>
+          <li><a href="#">Geliştirici Dokümanı</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Şirket</h5>
+        <ul>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Misyon &amp; Etki</a></li>
+          <li><a href="#">Kariyer</a></li>
+          <li><a href="#">Basın Kiti</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Greengold Carbon Intelligence — Tüm hakları saklıdır.</div>
+      <div class="legal">
+        <a href="#">Yasal Uyarı</a>
+        <a href="#">Gizlilik &amp; KVKK</a>
+        <a href="#">Çerez Politikası</a>
+        <a href="#">Hizmet Şartları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

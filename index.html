@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Greengold — Kurumsal Karbon Ölçüm & Sürdürülebilirlik Platformu</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- =================== TOP BAR =================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="fiyatlandirma.html">Fiyatlandırma</a>
+      <a href="pazar.html">Karbon Pazarı</a>
+      <a href="#">Kaynaklar</a>
+      <a href="#">Bize Ulaşın</a>
+    </div>
+    <div class="right">
+      <a href="#">Demo Hattı: 0850 000 33 33</a>
+      <a href="#" class="lang-switch active">TR</a>
+      <a href="#" class="lang-switch">EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="header">
+  <div class="container header__bar">
+    <a href="#" class="logo" aria-label="Greengold anasayfa">
+      <div class="logo__mark">G</div>
+      <div>
+        <div class="logo__text">Green<span>gold</span></div>
+        <span class="logo__sub">Carbon Intelligence</span>
+      </div>
+    </a>
+
+    <div class="seg" role="tablist" aria-label="Şirket tipi">
+      <button class="active" data-tab="kobi">KOBİ</button>
+      <button data-tab="kurumsal">KURUMSAL</button>
+    </div>
+
+    <nav class="nav" aria-label="Ana menü">
+      <ul>
+        <li><a href="olcum.html">Karbon Ölçüm <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">YENİ</span>
+              <h5>Şirketinizin karbon ayak izini dakikalar içinde ölçün</h5>
+              <p>Scope 1, 2 ve 3 emisyonları otomatik veri akışıyla hesaplayın.</p>
+              <a class="btn btn--dark" href="#">Ücretsiz Hesapla</a>
+            </div>
+            <div class="col-list">
+              <h4>Ölçüm Kapsamları</h4>
+              <a href="#">Scope 1 — Doğrudan Emisyon</a>
+              <a href="#">Scope 2 — Enerji Kaynaklı</a>
+              <a href="#">Scope 3 — Tedarik Zinciri</a>
+              <a href="#">Ürün Bazlı Karbon İzi (PCF)</a>
+              <a href="#">Kurumsal Karbon İzi (CCF)</a>
+              <a href="#">Etkinlik Karbon İzi</a>
+            </div>
+            <div class="col-list">
+              <h4>Standartlar</h4>
+              <a href="#">GHG Protocol</a>
+              <a href="#">ISO 14064</a>
+              <a href="#">SBTi Hizalama</a>
+              <a href="#">CDP Raporlama</a>
+              <a href="#">PAS 2050</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">ESG Raporlama <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature" style="background:linear-gradient(135deg,#0a3a3c,#00917d);color:#fff">
+              <span class="tag" style="background:#7be6cd;color:#002a2c">CSRD HAZIR</span>
+              <h5 style="color:#fff">CSRD ve TSRS uyumlu raporları otomatik hazırlayın</h5>
+              <p style="color:rgba(255,255,255,.85)">Verileriniz girildikçe rapor şablonu canlı güncellenir.</p>
+              <a class="btn" style="background:#fff;color:var(--navy)" href="#">Şablonları Gör</a>
+            </div>
+            <div class="col-list">
+              <h4>Raporlama Çerçeveleri</h4>
+              <a href="#">CSRD / ESRS</a>
+              <a href="#">TSRS (TFRS S1-S2)</a>
+              <a href="#">GRI Standartları</a>
+              <a href="#">SASB</a>
+              <a href="#">TCFD</a>
+            </div>
+            <div class="col-list">
+              <h4>Modüller</h4>
+              <a href="#">Çift Yönlü Önemlilik Analizi</a>
+              <a href="#">Paydaş Anketi</a>
+              <a href="#">Veri Doğrulama</a>
+              <a href="#">Otomatik Rapor Üretimi</a>
+              <a href="#">Denetim Hazırlığı</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Net Zero <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">YOL HARİTASI</span>
+              <h5>2050 Net Zero hedefinize bilimsel temelli yol haritası</h5>
+              <p>SBTi onaylı senaryolarla azaltım planınızı tasarlayın.</p>
+              <a class="btn btn--dark" href="#">Senaryoyu Kur</a>
+            </div>
+            <div class="col-list">
+              <h4>Stratejik Araçlar</h4>
+              <a href="#">Azaltım Senaryoları</a>
+              <a href="#">SBTi Hedef Belirleme</a>
+              <a href="#">Karbon Bütçesi</a>
+              <a href="#">Riskli Sektör Tarama</a>
+              <a href="#">Geçiş Risk Analizi</a>
+            </div>
+            <div class="col-list">
+              <h4>İzleme</h4>
+              <a href="#">Hedef vs. Gerçekleşen</a>
+              <a href="#">Yıllık Performans Skoru</a>
+              <a href="#">Kıyaslama (Benchmark)</a>
+              <a href="#">Uyarı & Bildirimler</a>
+            </div>
+          </div>
+        </li>
+        <li class="highlight"><a href="pazar.html">Karbon Kredisi <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">PAZAR YERİ</span>
+              <h5>Doğrulanmış karbon kredilerine güvenli erişim</h5>
+              <p>VCS, Gold Standard ve yerel sertifikalı projelerden seçim yapın.</p>
+              <a class="btn btn--dark" href="#">Pazara Gir</a>
+            </div>
+            <div class="col-list">
+              <h4>Kredi Türleri</h4>
+              <a href="#">Yenilenebilir Enerji</a>
+              <a href="#">Ormansızlaşmayı Önleme</a>
+              <a href="#">Toprak Karbon Tutumu</a>
+              <a href="#">Mavi Karbon Projeleri</a>
+              <a href="#">Direkt Hava Yakalama (DAC)</a>
+            </div>
+            <div class="col-list">
+              <h4>Pazar Bilgisi</h4>
+              <a href="#">Karbon Fiyat Endeksi</a>
+              <a href="#">Sertifika Doğrulama</a>
+              <a href="#">İz Sürme (Tracking)</a>
+              <a href="#">Dengeleme Raporu</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Yeşil Finansman <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">FİNANS</span>
+              <h5>Sürdürülebilirlik bağlantılı kredilere köprü</h5>
+              <p>KPI hedeflerinize ulaştıkça düşen faiz oranları için partner bankalar.</p>
+              <a class="btn btn--dark" href="#">Finansman Bul</a>
+            </div>
+            <div class="col-list">
+              <h4>Ürünler</h4>
+              <a href="#">Yeşil Tahvil</a>
+              <a href="#">Sürdürülebilirlik Bağlantılı Kredi</a>
+              <a href="#">Sosyal Etki Tahvili</a>
+              <a href="#">Geçiş Finansmanı</a>
+              <a href="#">Yenilenebilir Enerji Kredisi</a>
+            </div>
+            <div class="col-list">
+              <h4>Uyum</h4>
+              <a href="#">AB Taksonomi</a>
+              <a href="#">ICMA Yeşil Tahvil İlkeleri</a>
+              <a href="#">Etki Raporlama</a>
+              <a href="#">İkinci Görüş (SPO)</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Danışmanlık <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">UZMAN DESTEK</span>
+              <h5>Sertifikalı sürdürülebilirlik danışmanlarımızla çalışın</h5>
+              <p>Sektörel deneyimimizle ölçümden raporlamaya uçtan uca destek.</p>
+              <a class="btn btn--dark" href="#">Görüşme Planla</a>
+            </div>
+            <div class="col-list">
+              <h4>Hizmetler</h4>
+              <a href="#">Sürdürülebilirlik Stratejisi</a>
+              <a href="#">Materyalite Çalıştayı</a>
+              <a href="#">Doğrulama (Verification)</a>
+              <a href="#">Eğitim & Sertifikasyon</a>
+              <a href="#">Tedarikçi Etki Programı</a>
+            </div>
+            <div class="col-list">
+              <h4>Kaynaklar</h4>
+              <a href="#">Sürdürülebilirlik Akademisi</a>
+              <a href="#">Sektör Raporları</a>
+              <a href="#">Web Seminerleri</a>
+              <a href="#">Vaka Çalışmaları</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__cta">
+      <a href="#" class="btn btn--ghost">Demo İste</a>
+      <a href="#" class="btn btn--primary">Giriş Yap</a>
+    </div>
+  </div>
+</header>
+
+<!-- =================== QUICK TOOLS =================== -->
+<div class="tools">
+  <div class="container">
+    <span class="tools__label">HIZLI ARAÇLAR</span>
+    <a href="#"><span class="ico">●</span> Karbon Hesaplayıcı</a>
+    <a href="#"><span class="ico">●</span> Karbon Fiyat Endeksi</a>
+    <a href="#"><span class="ico">●</span> ESG Skor Sorgulama</a>
+    <a href="#"><span class="ico">●</span> Sektörel Kıyaslama</a>
+    <a href="#"><span class="ico">●</span> Emisyon Faktörleri</a>
+    <a href="#"><span class="ico">●</span> Net Zero Yol Haritası</a>
+    <a href="#"><span class="ico">●</span> Sertifika Doğrulama</a>
+    <a href="#"><span class="ico">●</span> Hesaplama Araçları</a>
+  </div>
+</div>
+
+<!-- =================== HERO SLIDER =================== -->
+<section class="hero" aria-label="Öne çıkanlar">
+  <div class="hero__viewport" id="heroViewport">
+    <div class="slide active" data-slide="0">
+      <div class="slide__content">
+        <span class="slide__eyebrow">Karbon Ölçüm Platformu</span>
+        <h1 class="slide__title">Şirketinizin karbon ayak izini <strong>tek ekranda</strong> ölçün</h1>
+        <p class="slide__desc">Scope 1, 2 ve 3 emisyonlarınızı GHG Protocol uyumlu şekilde otomatik hesaplayın, raporlayın, azaltın.</p>
+        <a href="#" class="btn btn--primary">Ücretsiz Hesapla</a>
+      </div>
+      <div class="slide__visual">
+        <div class="blob"></div>
+        <div class="badge b1"><div><div class="pct">3 Scope</div><div class="lbl">Tam kapsam</div></div></div>
+        <div class="badge b2"><div><div class="pct">15 dk</div><div class="lbl">İlk sonuç</div></div></div>
+      </div>
+    </div>
+
+    <div class="slide" data-slide="1">
+      <div class="slide__content">
+        <span class="slide__eyebrow">CSRD &amp; TSRS Hazır</span>
+        <h1 class="slide__title">ESG raporunuz <strong>otomatik</strong> hazır</h1>
+        <p class="slide__desc">Çift yönlü önemlilik analizinden veri toplamaya kadar tüm raporlama akışı tek platformda. Denetime hazır şablonlar.</p>
+        <a href="#" class="btn btn--primary">Şablonları İncele</a>
+      </div>
+      <div class="slide__visual">
+        <div class="blob" style="background:radial-gradient(circle at 30% 30%,#f0c14b 0%,#d4a72a 50%,#7a5a0a 100%)"></div>
+        <div class="badge b1"><div><div class="pct" style="color:#7a5a0a">CSRD</div><div class="lbl">Uyumlu</div></div></div>
+        <div class="badge b2"><div><div class="pct" style="color:#7a5a0a">12+</div><div class="lbl">Çerçeve desteği</div></div></div>
+      </div>
+    </div>
+
+    <div class="slide" data-slide="2">
+      <div class="slide__content">
+        <span class="slide__eyebrow">Net Zero Yol Haritası</span>
+        <h1 class="slide__title">Bilimsel temelli <strong>azaltım planı</strong></h1>
+        <p class="slide__desc">SBTi onaylı senaryolarla 2030 ara hedeflerinizi belirleyin, ilerlemenizi gerçek zamanlı izleyin.</p>
+        <a href="#" class="btn btn--primary">Senaryoyu Kur</a>
+      </div>
+      <div class="slide__visual">
+        <div class="blob" style="background:radial-gradient(circle at 30% 30%,#a3e7ff 0%,#3aa9d9 50%,#1f4f7a 100%)"></div>
+        <div class="badge b1"><div><div class="pct" style="color:#1f4f7a">-42%</div><div class="lbl">2030 hedef</div></div></div>
+        <div class="badge b2"><div><div class="pct" style="color:#1f4f7a">2050</div><div class="lbl">Net Zero</div></div></div>
+      </div>
+    </div>
+
+    <div class="slide" data-slide="3">
+      <div class="slide__content">
+        <span class="slide__eyebrow">Karbon Pazar Yeri</span>
+        <h1 class="slide__title">Doğrulanmış kredilerle <strong>dengele</strong></h1>
+        <p class="slide__desc">VCS ve Gold Standard sertifikalı projelerden seçim yapın, dengeleme sertifikanızı tek tıkla alın.</p>
+        <a href="#" class="btn btn--primary">Pazara Gir</a>
+      </div>
+      <div class="slide__visual">
+        <div class="blob"></div>
+        <div class="badge b1"><div><div class="pct">VCS</div><div class="lbl">Sertifikalı</div></div></div>
+        <div class="badge b2"><div><div class="pct">200+</div><div class="lbl">Proje</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="hero__arrow prev" aria-label="Önceki" id="heroPrev">‹</button>
+  <button class="hero__arrow next" aria-label="Sonraki" id="heroNext">›</button>
+
+  <div class="hero__nav" id="heroDots">
+    <button class="hero__dot active" data-go="0" aria-label="Slayt 1"></button>
+    <button class="hero__dot" data-go="1" aria-label="Slayt 2"></button>
+    <button class="hero__dot" data-go="2" aria-label="Slayt 3"></button>
+    <button class="hero__dot" data-go="3" aria-label="Slayt 4"></button>
+  </div>
+</section>
+
+<!-- =================== STATS BAND =================== -->
+<section class="stats-band" aria-label="Greengold rakamlarla">
+  <div class="container">
+    <div class="stats-band__inner">
+      <div>
+        <div class="stat__num" data-target="14.2">0,0<small>M</small></div>
+        <div class="stat__label">tCO₂e Ölçüldü</div>
+        <div class="stat__sub">Measured to date</div>
+      </div>
+      <div>
+        <div class="stat__num" data-target="640">0<small>+</small></div>
+        <div class="stat__label">Şirket Müşteri</div>
+        <div class="stat__sub">Across 12 industries</div>
+      </div>
+      <div>
+        <div class="stat__num" data-target="28">0<small></small></div>
+        <div class="stat__label">Ülkede Faaliyet</div>
+        <div class="stat__sub">EMEA &amp; APAC</div>
+      </div>
+      <div>
+        <div class="stat__num" data-target="1.8">0,0<small>M</small></div>
+        <div class="stat__label">Karbon Kredisi Satıldı</div>
+        <div class="stat__sub">Verified credits retired</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== KURUMSAL KARBON HESAPLAYICI =================== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <h2>Kurumsal <strong>Karbon Ayak İzi</strong> Hesaplayıcı</h2>
+      <p>Şirketiniz için tahmini sera gazı emisyonunu saniyeler içinde öğrenin.</p>
+    </div>
+
+    <div class="calc">
+      <!-- LEFT: INPUTS -->
+      <div class="calc__left">
+        <div class="calc__q-title">Şirketinizin Faaliyet Alanı Hangisi?</div>
+        <div class="calc__sectors" role="tablist">
+          <button class="sector active" data-sector="uretim" data-factor="0.92" role="tab">
+            <span class="sector__ico">🏭</span><span>Üretim / Sanayi</span>
+          </button>
+          <button class="sector" data-sector="hizmet" data-factor="0.38" role="tab">
+            <span class="sector__ico">💼</span><span>Hizmet / Ofis</span>
+          </button>
+          <button class="sector" data-sector="lojistik" data-factor="1.15" role="tab">
+            <span class="sector__ico">🚚</span><span>Lojistik / Ulaşım</span>
+          </button>
+          <button class="sector" data-sector="perakende" data-factor="0.46" role="tab">
+            <span class="sector__ico">🛒</span><span>Perakende / Ticaret</span>
+          </button>
+        </div>
+
+        <div class="calc__field">
+          <label class="calc__label">Yıllık Enerji Tüketiminiz <span class="info" title="Elektrik + ısınma + yakıt toplamı (kWh eşdeğeri)">i</span></label>
+          <div class="calc__value-row">
+            <input type="text" id="energyVal" value="500.000" readonly />
+            <span class="unit">kWh</span>
+          </div>
+          <input type="range" id="energySlider" min="50000" max="10000000" step="50000" value="500000" />
+          <div class="calc__range-labels"><span>50.000 kWh</span><span>10.000.000 kWh</span></div>
+        </div>
+
+        <div class="calc__field">
+          <label class="calc__label">Çalışan Sayınız</label>
+          <div class="calc__value-row">
+            <input type="text" id="staffVal" value="120" readonly />
+            <span class="unit">kişi</span>
+          </div>
+          <input type="range" id="staffSlider" min="5" max="5000" step="5" value="120" />
+          <div class="calc__range-labels"><span>5</span><span>5.000</span></div>
+        </div>
+
+        <div class="calc__field">
+          <label class="calc__label">Hesaplama Dönemi</label>
+          <div class="periods">
+            <button class="period" data-mult="0.0833">Aylık</button>
+            <button class="period" data-mult="0.25">3 Aylık</button>
+            <button class="period" data-mult="0.5">6 Aylık</button>
+            <button class="period active" data-mult="1">Yıllık</button>
+          </div>
+        </div>
+
+        <div class="calc__note">
+          50.000 – 10.000.000 kWh aralığındaki tüketimler için tahmini değerler hesaplanmaktadır. Detaylı raporlama için danışmanımıza ulaşabilirsiniz.
+        </div>
+      </div>
+
+      <!-- RIGHT: RESULT -->
+      <div class="calc__right">
+        <div class="calc__visual">🌍</div>
+        <p class="calc__lead"><strong id="resEnergy">500.000 kWh</strong> tüketim ve <strong id="resStaff">120</strong> çalışan için <strong id="resPeriod">yıllık</strong> tahmini emisyonunuz;</p>
+
+        <div class="calc__metrics">
+          <div class="metric">
+            <div class="metric__label">Toplam Emisyon</div>
+            <div class="metric__value" id="resTotal">460,0 <span>tCO₂e</span></div>
+          </div>
+          <div class="metric">
+            <div class="metric__label">Çalışan Başına</div>
+            <div class="metric__value" id="resPer">3,83 <span>tCO₂e</span></div>
+          </div>
+        </div>
+
+        <a href="#" class="calc__report">📊 Detaylı emisyon raporu görüntüle</a>
+
+        <a href="#" class="calc__cta">Sürdürülebilirlik Danışmanıyla Görüş</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LOGO WALL =================== -->
+<section class="logo-wall" aria-label="Müşteri ve referanslarımız">
+  <div class="container">
+    <div class="logo-wall__head">
+      <span class="eyebrow">Trusted by industry leaders</span>
+      <h2>Sektörün öncüleriyle <strong>aynı yolda</strong></h2>
+      <p>Türkiye ve dünya genelinde havayollarından holding gruplarına; karbon yolculuğunda yan yana yürüdüğümüz kurumlardan bazıları.</p>
+    </div>
+    <div class="logo-wall__rows">
+      <div class="logo-wall__cell">Turkish Airlines</div>
+      <div class="logo-wall__cell">Pegasus</div>
+      <div class="logo-wall__cell">Lufthansa Group</div>
+      <div class="logo-wall__cell">Emirates</div>
+      <div class="logo-wall__cell">Qatar Airways</div>
+      <div class="logo-wall__cell">Air France‑KLM</div>
+
+      <div class="logo-wall__cell">Koç Holding</div>
+      <div class="logo-wall__cell">Sabancı Holding</div>
+      <div class="logo-wall__cell">Eczacıbaşı</div>
+      <div class="logo-wall__cell">Anadolu Group</div>
+      <div class="logo-wall__cell">Doğuş Holding</div>
+      <div class="logo-wall__cell">Zorlu Holding</div>
+
+      <div class="logo-wall__cell">Yıldız Holding</div>
+      <div class="logo-wall__cell">Borusan</div>
+      <div class="logo-wall__cell">Akkök Holding</div>
+      <div class="logo-wall__cell">Tekfen</div>
+      <div class="logo-wall__cell">Limak</div>
+      <div class="logo-wall__cell">Çalık Holding</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== HOW IT WORKS =================== -->
+<section class="hiw">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How Greengold works</span>
+      <h2>Üç adımda <strong>karbon dönüşümü</strong></h2>
+      <p>Ölç. Azalt. Dengele. — Greengold ile uçtan uca yolculuk.</p>
+    </div>
+    <div class="hiw__steps">
+      <div class="hiw__step">
+        <div class="hiw__num">01</div>
+        <h3 class="hiw__title">Ölç <em>Measure</em></h3>
+        <p class="hiw__desc">Scope 1, 2 ve 3 emisyonlarınızı ERP, fatura ve sayaç verisinden otomatik toplayıp GHG Protocol uyumlu olarak hesaplayın.</p>
+      </div>
+      <div class="hiw__step">
+        <div class="hiw__num">02</div>
+        <h3 class="hiw__title">Azalt <em>Reduce</em></h3>
+        <p class="hiw__desc">Yapay zekâ destekli senaryolarla en yüksek etkili azaltım fırsatlarını keşfedin. SBTi onaylı yol haritasıyla 2030 ve 2050 hedeflerinizi izleyin.</p>
+      </div>
+      <div class="hiw__step">
+        <div class="hiw__num">03</div>
+        <h3 class="hiw__title">Dengele <em>Offset</em></h3>
+        <p class="hiw__desc">Pazarımızdan VCS ve Gold Standard sertifikalı projeleri tek tıkla satın alın, dengeleme sertifikanızı aynı gün üretin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROMO BANNER =================== -->
+<section style="padding:0 0 72px">
+  <div class="container">
+    <div class="promo">
+      <div>
+        <h3>Ölçemediğinizi <strong>azaltamazsınız</strong></h3>
+        <p>Greengold ile karbon ayak izinizi şeffaf bir şekilde ölçün, anlamlandırın ve azaltım hedeflerinize doğru somut adımlar atın. Sürdürülebilirlik raporlarınız tek platformda.</p>
+        <a href="#" class="btn">Greengold Yaklaşımı</a>
+      </div>
+      <div style="text-align:right;font-size:84px;line-height:1;font-weight:300">🌍</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GREEN GOLD KARTLARI =================== -->
+<section class="block" style="padding-top:24px">
+  <div class="container">
+    <div class="section-head">
+      <h2>Green Gold <strong>Kartları</strong></h2>
+      <p>Üç dikey, tek platform — uçuştan konaklamaya, yoldan ofise tüm karbon ayak izinizi yönetin.</p>
+    </div>
+
+    <div class="pcards">
+
+      <!-- WINGS -->
+      <article class="pcard pcard--wings">
+        <div class="pcard__visual">
+          <div class="vcard vcard--wings">
+            <div class="vcard__top">
+              <div class="vcard__brand">Green Gold<small>WINGS</small></div>
+              <svg class="vcard__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1L15 22v-1.5L13 19v-5.5l8 2.5z"/></svg>
+            </div>
+            <div class="vcard__chip"></div>
+            <div class="vcard__num">5407 0901 •••• 6789</div>
+            <div class="vcard__bottom">
+              <div>
+                <div class="vcard__name">Ada Ulukaya</div>
+              </div>
+              <div class="vcard__valid">Valid Thru<b>05/28</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Green Gold <em>Wings</em></h3>
+          <p class="pcard__desc">Şirket uçuşlarınızı doğrulanmış karbon kredileriyle dengeleyin. Her bilet otomatik olarak emisyon panelinize işlenir, dengeleme sertifikanız anında üretilir.</p>
+          <div class="pcard__cta">
+            <a href="#" class="pcard__btn">Başvur</a>
+            <a href="#" class="pcard__detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+              Detaylı Bilgi
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- WHEELS -->
+      <article class="pcard pcard--wheels">
+        <div class="pcard__visual">
+          <div class="vcard vcard--wheels">
+            <div class="vcard__top">
+              <div class="vcard__brand">Green Gold<small>WHEELS</small></div>
+              <svg class="vcard__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a1 1 0 1 1-2 0v-1H7v1a1 1 0 1 1-2 0v-1H4a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1zm2 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm10 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+            </div>
+            <div class="vcard__chip"></div>
+            <div class="vcard__num">4528 1742 •••• 2304</div>
+            <div class="vcard__bottom">
+              <div>
+                <div class="vcard__name">Ada Ulukaya</div>
+              </div>
+              <div class="vcard__valid">Valid Thru<b>09/29</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Green Gold <em>Wheels</em></h3>
+          <p class="pcard__desc">Filo emisyonlarınızı araç-bazında izleyin, EV geçişine yol haritası çıkarın. 12.000+ şarj noktasına tek dokunuşla erişim ve yakıt-kilometre verisinin otomatik akışı.</p>
+          <div class="pcard__cta">
+            <a href="#" class="pcard__btn">Başvur</a>
+            <a href="#" class="pcard__detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+              Detaylı Bilgi
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- STAY -->
+      <article class="pcard pcard--stay">
+        <div class="pcard__visual">
+          <div class="vcard vcard--stay">
+            <div class="vcard__top">
+              <div class="vcard__brand">Green Gold<small>STAY</small></div>
+              <svg class="vcard__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V8l9-5 9 5v13h-6v-7H9v7H3zm6-9h6v-2H9v2zm0-4h6V6H9v2z"/></svg>
+            </div>
+            <div class="vcard__chip"></div>
+            <div class="vcard__num">3756 4012 •••• 7997</div>
+            <div class="vcard__bottom">
+              <div>
+                <div class="vcard__name">Ada Ulukaya</div>
+              </div>
+              <div class="vcard__valid">Valid Thru<b>10/27</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Green Gold <em>Stay</em></h3>
+          <p class="pcard__desc">Çalışan konaklamalarında sürdürülebilirlik etiketli oteller, ölçülmüş enerji-su kullanımı ve düşük karbon tercihleri. Her gece otomatik raporlanır, ESG kapsamına işlenir.</p>
+          <div class="pcard__cta">
+            <a href="#" class="pcard__btn">Başvur</a>
+            <a href="#" class="pcard__detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+              Detaylı Bilgi
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="pcards-more">
+      <a href="#"><span class="plus-circle">+</span> Tüm Green Gold Çözümlerini Gör</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AKILLI ÇÖZÜMLER =================== -->
+<section class="block" style="background:var(--bg-soft);padding-top:56px;padding-bottom:56px">
+  <div class="container">
+    <div class="section-head">
+      <h2>Şirketinize özel <strong>akıllı çözümler</strong></h2>
+      <p>Veriyle şekillenen, sektörünüze uyarlanmış sürdürülebilirlik deneyimi.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card__icon">📊</div>
+        <h3>Karbon Panelim</h3>
+        <p>Tüm emisyonlarınızı tek ekranda görün, ay-ay değişimi takip edin.</p>
+        <a href="#" class="more">Panele Bak</a>
+      </div>
+      <div class="card">
+        <div class="card__icon">🔄</div>
+        <h3>Otomatik Veri Akışı</h3>
+        <p>ERP, fatura ve enerji sayaçlarınızdan veri otomatik aktarılır.</p>
+        <a href="#" class="more">Entegrasyonlar</a>
+      </div>
+      <div class="card">
+        <div class="card__icon">🤖</div>
+        <h3>Greengold AI</h3>
+        <p>Azaltım önerileri ve raporlama metinleri için yapay zeka asistan.</p>
+        <a href="#" class="more">Tanış</a>
+      </div>
+      <div class="card">
+        <div class="card__icon">📈</div>
+        <h3>Sektör Kıyası</h3>
+        <p>Performansınızı sektör ortalamalarıyla anlık karşılaştırın.</p>
+        <a href="#" class="more">Kıyasla</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== MARKETPLACE CTA =================== -->
+<section class="mkt-cta">
+  <div class="container">
+    <div class="mkt-cta__grid">
+      <div>
+        <span class="eyebrow">Carbon Credit Marketplace</span>
+        <h2>Ölçtüğünüzü <strong>dengeleyin.</strong><br/>Doğrulanmış kredilerle.</h2>
+        <p class="mkt-cta__desc">VCS, Gold Standard, ACR ve CAR sertifikalı 200'den fazla projeden seçim yapın. Yenilenebilir enerjiden orman korumaya, mavi karbondan direkt hava yakalamaya — şirketinize uygun portföyü oluşturun. Sertifikanız aynı gün üretilir, blok zincir kayıtlı, denetime hazır.</p>
+        <div class="mkt-cta__btns">
+          <a href="pazar.html" class="btn btn--gold">Pazara Git →</a>
+          <a href="#" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4)">Nasıl Çalışır?</a>
+        </div>
+      </div>
+      <div class="mkt-cta__ticker">
+        <h4>Live carbon prices &nbsp;·&nbsp; Canlı fiyatlar</h4>
+        <div class="ticker-row">
+          <div class="name">EU ETS<small>European Union Allowance</small></div>
+          <div><span class="price">€72,40</span><span class="change up">+1,8%</span></div>
+        </div>
+        <div class="ticker-row">
+          <div class="name">VCS Standard<small>Voluntary, weighted avg.</small></div>
+          <div><span class="price">$8,15</span><span class="change down">−0,4%</span></div>
+        </div>
+        <div class="ticker-row">
+          <div class="name">Gold Standard<small>Renewable energy</small></div>
+          <div><span class="price">$12,90</span><span class="change up">+2,3%</span></div>
+        </div>
+        <div class="ticker-row">
+          <div class="name">Nature‑Based<small>REDD+ &amp; ARR</small></div>
+          <div><span class="price">$18,60</span><span class="change up">+0,9%</span></div>
+        </div>
+        <div class="ticker-row">
+          <div class="name">DAC / Engineered<small>Direct air capture</small></div>
+          <div><span class="price">$320,00</span><span class="change up">+4,1%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== DIGITAL CHANNELS =================== -->
+<section class="channels">
+  <div class="container">
+    <div class="section-head">
+      <h2>Greengold'a <strong>her yerden ulaşın</strong></h2>
+    </div>
+    <div class="channels-grid">
+      <div class="channel">
+        <div class="channel__icon">💻</div>
+        <h3>Web Platformu</h3>
+        <p>Tüm modüller, raporlar ve dashboard tek tarayıcıda.</p>
+        <a href="#">Platforma Git →</a>
+      </div>
+      <div class="channel">
+        <div class="channel__icon">📱</div>
+        <h3>Mobil Uygulama</h3>
+        <p>Saha verilerini telefondan girin, anlık bildirim alın.</p>
+        <a href="#">Uygulamayı İndir →</a>
+      </div>
+      <div class="channel">
+        <div class="channel__icon">⚙️</div>
+        <h3>API & Entegrasyon</h3>
+        <p>SAP, Oracle, Netsis ve enerji sayaçlarınız için hazır konektörler.</p>
+        <a href="#">Geliştirici Dokümanı →</a>
+      </div>
+      <div class="channel">
+        <div class="channel__icon">🤝</div>
+        <h3>Danışman Hattı</h3>
+        <p>Sürdürülebilirlik uzmanlarımızdan iş günleri 09:00–18:00 destek.</p>
+        <a href="#">Görüşme Planla →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TESTIMONIALS =================== -->
+<section class="testi">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What our customers say</span>
+      <h2>Müşterilerimizin <strong>sözünden</strong></h2>
+      <p>Sürdürülebilirlik liderlerinin Greengold deneyimi.</p>
+    </div>
+    <div class="testi__grid">
+      <article class="testi__card">
+        <p class="testi__quote">Eskiden CSRD raporu hazırlamak 6 aylık bir koşturmaca demekti. Greengold'la veri toplama otomatikleşti, taslakları AI hazırlıyor; biz sadece doğrulayıp imzalıyoruz. Süreç 3 haftaya indi.</p>
+        <div class="testi__person">
+          <div class="testi__avatar">SD</div>
+          <div class="testi__role">Sürdürülebilirlik Direktörü
+            <span>Türkiye merkezli sanayi holdingi</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi__card">
+        <p class="testi__quote">Filomuzdaki 1.200 aracın yakıt verisini Wheels modülüne bağladığımız ilk gün, Scope 1 tablomuzun %38'inin nereden geldiğini ilk kez bu netlikte gördük. Azaltım kararları artık tahmin değil, veri.</p>
+        <div class="testi__person">
+          <div class="testi__avatar">OM</div>
+          <div class="testi__role">Operasyon Müdürü
+            <span>Avrupa merkezli lojistik şirketi</span>
+          </div>
+        </div>
+      </article>
+      <article class="testi__card">
+        <p class="testi__quote">Pazar yerinden Anadolu rüzgar projesinden kredi aldık. Sertifika 4 saat içinde geldi, blok zincir kaydı paydaş raporumuzda yer aldı. Yatırımcılar bu şeffaflığı çok değerli buluyor.</p>
+        <div class="testi__person">
+          <div class="testi__avatar">YU</div>
+          <div class="testi__role">Yatırımcı İlişkileri Lideri
+            <span>BIST 30 üyesi enerji şirketi</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <h2>Sıkça Sorulan <strong>Sorular</strong></h2>
+    </div>
+    <div class="faq" id="faq">
+      <div class="faq__item">
+        <button class="faq__q">Greengold karbon ölçümünü hangi standartlara göre yapıyor?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Tüm hesaplamalarımız GHG Protocol Corporate Standard ve ISO 14064-1 ile uyumludur. Sektör bazında IPCC ve DEFRA emisyon faktörlerini kullanıyoruz; yıllık olarak güncellenir.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Verilerimi platforma nasıl yüklerim?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Excel şablonlarıyla manuel girebilir, ERP sistemlerinizden API ile otomatik aktarabilir veya enerji sayaçlarınızı IoT konektörlerimizle doğrudan bağlayabilirsiniz.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Scope 3 emisyonlarını da ölçebilir miyim?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Evet. 15 Scope 3 kategorisinin tamamı (satın alınan ürün/hizmet, ulaşım, atık, kullanım, vb.) destekleniyor. Tedarikçilerinizden veri toplamak için anket modülümüz mevcut.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">CSRD raporu otomatik hazırlanıyor mu?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Evet. Çift yönlü önemlilik analizinden ESRS açıklamalarına kadar tüm rapor adımları platformda yer alır. Yapay zeka asistanımız metin taslaklarını da üretir; siz onaylar ve düzenlersiniz.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Karbon dengeleme için hangi sertifikalar geçerli?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Pazar yerimizde yalnızca VCS (Verra), Gold Standard, ACR ve CAR sertifikalı projeler yer alır. Her kredi için kaynak proje bilgisi, vintage yılı ve doğrulama raporu erişilebilirdir.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Verilerim ne kadar güvende?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Tüm veriler ISO 27001 sertifikalı altyapıda şifrelenerek saklanır, KVKK ve GDPR ile uyumludur. Verileriniz sizin izniniz olmadan üçüncü taraflarla paylaşılmaz.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="logo">
+          <div class="logo__mark">G</div>
+          <div>
+            <div class="logo__text" style="color:#fff">Green<span style="color:var(--gold-light)">gold</span></div>
+            <span class="logo__sub" style="color:#7be6cd">Carbon Intelligence</span>
+          </div>
+        </div>
+        <p>Şirketler için kurumsal karbon ölçüm, ESG raporlama ve sürdürülebilirlik dönüşüm platformu. Ölçüyoruz, raporluyoruz, azaltıyoruz.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="GitHub">{ }</a>
+        </div>
+      </div>
+      <div>
+        <h5>Çözümler</h5>
+        <ul>
+          <li><a href="#">Karbon Ölçüm</a></li>
+          <li><a href="#">ESG Raporlama</a></li>
+          <li><a href="#">Net Zero Yol Haritası</a></li>
+          <li><a href="#">Karbon Kredisi Pazarı</a></li>
+          <li><a href="#">Yeşil Finansman Erişimi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kaynaklar</h5>
+        <ul>
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Sürdürülebilirlik Akademisi</a></li>
+          <li><a href="#">Vaka Çalışmaları</a></li>
+          <li><a href="#">Sektör Raporları</a></li>
+          <li><a href="#">Geliştirici Dokümanı</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Şirket</h5>
+        <ul>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Misyon &amp; Etki</a></li>
+          <li><a href="#">Kariyer</a></li>
+          <li><a href="#">Basın Kiti</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Greengold Carbon Intelligence — Tüm hakları saklıdır.</div>
+      <div class="legal">
+        <a href="#">Yasal Uyarı</a>
+        <a href="#">Gizlilik &amp; KVKK</a>
+        <a href="#">Çerez Politikası</a>
+        <a href="#">Hizmet Şartları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Vercel
+.vercel
+
+# Dependencies (varsa)
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

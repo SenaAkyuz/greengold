@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karbon Kredisi Pazarı — Greengold</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- =================== TOP BAR =================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="index.html">Anasayfa</a>
+      <a href="#">Kaynaklar</a>
+      <a href="#">Bize Ulaşın</a>
+    </div>
+    <div class="right">
+      <a href="#">Demo Hattı: 0850 000 33 33</a>
+      <a href="#" class="lang-switch active">TR</a>
+      <a href="#" class="lang-switch">EN</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="header">
+  <div class="container header__bar">
+    <a href="index.html" class="logo" aria-label="Greengold anasayfa">
+      <div class="logo__mark">G</div>
+      <div>
+        <div class="logo__text">Green<span>gold</span></div>
+        <span class="logo__sub">Carbon Intelligence</span>
+      </div>
+    </a>
+
+    <div class="seg" role="tablist" aria-label="Şirket tipi">
+      <button class="active" data-tab="kobi">KOBİ</button>
+      <button data-tab="kurumsal">KURUMSAL</button>
+    </div>
+
+    <nav class="nav" aria-label="Ana menü">
+      <ul>
+        <li><a href="olcum.html">Karbon Ölçüm</a></li>
+        <li><a href="#">ESG Raporlama</a></li>
+        <li><a href="#">Net Zero</a></li>
+        <li class="highlight"><a href="pazar.html" style="border-bottom-color:var(--gold)">Karbon Kredisi</a></li>
+        <li><a href="fiyatlandirma.html">Fiyatlandırma</a></li>
+        <li><a href="#">Danışmanlık</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__cta">
+      <a href="#" class="btn btn--ghost">Demo İste</a>
+      <a href="#" class="btn btn--primary">Giriş Yap</a>
+    </div>
+  </div>
+</header>
+
+<!-- =================== SUBHERO =================== -->
+<section class="subhero">
+  <div class="container subhero__inner">
+    <div class="crumb"><a href="index.html">Anasayfa</a> &nbsp;›&nbsp; Karbon Kredisi Pazarı</div>
+    <h1>Doğrulanmış kredilerle <strong>karbonu dengele</strong></h1>
+    <p>200'den fazla VCS, Gold Standard, ACR ve Plan Vivo sertifikalı projeden seçim yap. Sertifikan aynı gün üretilir, blok zincir kayıtlı, denetime hazır. <em style="color:#7be6cd;font-style:normal;font-weight:600">Verified, retired, recorded — instantly.</em></p>
+
+    <div class="subhero__strip" id="priceStrip">
+      <div class="cell">
+        <div class="lbl">EU ETS</div>
+        <div class="val">€72,40 <small class="up">+1,8%</small></div>
+      </div>
+      <div class="cell">
+        <div class="lbl">VCS Avg.</div>
+        <div class="val">$8,15 <small class="down">−0,4%</small></div>
+      </div>
+      <div class="cell">
+        <div class="lbl">Gold Standard</div>
+        <div class="val">$12,90 <small class="up">+2,3%</small></div>
+      </div>
+      <div class="cell">
+        <div class="lbl">Nature‑Based</div>
+        <div class="val">$18,60 <small class="up">+0,9%</small></div>
+      </div>
+      <div class="cell">
+        <div class="lbl">DAC / Engineered</div>
+        <div class="val">$320,00 <small class="up">+4,1%</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FILTERS =================== -->
+<div class="filterbar">
+  <div class="container">
+    <div class="filterbar__inner">
+      <span class="filterbar__label">Tür</span>
+      <div class="filterbar__group" data-filter="type">
+        <button class="fchip active" data-val="all">Tümü <span class="count">12</span></button>
+        <button class="fchip" data-val="renew">Yenilenebilir Enerji</button>
+        <button class="fchip" data-val="forest">Orman &amp; Doğa</button>
+        <button class="fchip" data-val="blue">Mavi Karbon</button>
+        <button class="fchip" data-val="soil">Toprak Karbon</button>
+        <button class="fchip" data-val="dac">DAC / Mühendislik</button>
+        <button class="fchip" data-val="cookstove">Topluluk</button>
+      </div>
+      <div class="filterbar__sort">
+        <span>Sırala:</span>
+        <select id="sortBy">
+          <option>Önerilenler</option>
+          <option>Fiyat: Düşük → Yüksek</option>
+          <option>Fiyat: Yüksek → Düşük</option>
+          <option>Vintage: Yeni → Eski</option>
+          <option>Hacim: Yüksek → Düşük</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== FEATURED =================== -->
+<section class="proj-section" style="padding-bottom:24px">
+  <div class="container">
+    <div class="proj-section__head">
+      <h2>Öne çıkan proje <small>Editor's pick · Yüksek koruyuculuk değeri</small></h2>
+      <a href="#" style="color:var(--green-dark);font-weight:700;font-size:14px">Tüm projeleri gör →</a>
+    </div>
+
+    <div class="proj-grid proj-grid--featured">
+      <article class="proj-card" data-type="forest">
+        <div class="proj-card__visual v-forest">
+          <span style="font-size:84px">🌳</span>
+          <span class="vintage-pill">2024 vintage</span>
+          <span class="standard-pill gold">VCS + CCB</span>
+          <div class="stock">
+            <span>Mevcut: 118.420 / 150.000 tCO₂e</span>
+            <div class="bar"><i style="width:79%"></i></div>
+          </div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta">
+            <span>🇧🇷 Pará, Brezilya</span><span class="dot"></span>
+            <span>Orman Koruma · REDD+</span><span class="dot"></span>
+            <span>Verra ID #2487</span>
+          </div>
+          <h3 class="proj-card__title">Amazonia Yaşam Koridoru REDD+ Projesi</h3>
+          <p class="proj-card__desc" style="-webkit-line-clamp:5;line-clamp:5">Pará eyaletinde 380.000 hektarlık tropikal yağmur ormanını ormansızlaşmadan koruyan, 14 yerli topluluğun geçim kaynaklarını destekleyen 30 yıllık koruma projesi. CCB Triple Gold sertifikalı — biyoçeşitlilik ve topluluk faydası en yüksek seviyede. Yıllık 850.000 tCO₂e azaltım kapasitesi, satellite-MRV ile bağımsız doğrulama.</p>
+          <div class="proj-card__sdgs" style="margin-top:10px">
+            <span class="sdg sdg-13">13</span>
+            <span class="sdg sdg-15">15</span>
+            <span class="sdg sdg-1">1</span>
+            <span class="sdg sdg-8">8</span>
+            <span class="sdg sdg-2">2</span>
+          </div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price">
+              <div class="amount">$18,80<small>/tCO₂e</small></div>
+              <div class="per">Min. 50 ton · KDV hariç</div>
+            </div>
+            <button class="proj-card__add" data-id="amazonia" data-name="Amazonia Yaşam Koridoru REDD+" data-price="18.80" data-color="v-forest" data-emoji="🌳">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROJECT GRID =================== -->
+<section class="proj-section" style="padding-top:24px">
+  <div class="container">
+    <div class="proj-section__head">
+      <h2>Tüm projeler <small>12 doğrulanmış proje · Anlık stok</small></h2>
+    </div>
+
+    <div class="proj-grid" id="projGrid">
+
+      <article class="proj-card" data-type="renew">
+        <div class="proj-card__visual v-renew">
+          <span>💨</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill">VCS</span>
+          <div class="stock"><span>50.000 ton mevcut</span><div class="bar"><i style="width:88%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇹🇷 Sinop, Türkiye</span><span class="dot"></span><span>Rüzgar</span></div>
+          <h3 class="proj-card__title">Karadeniz Rüzgar Çiftliği</h3>
+          <p class="proj-card__desc">128 MW kurulu kapasiteli kıyı rüzgar santrali. Yıllık 410 GWh temiz elektrik, fosil yakıtlı üretim yerine geçerek emisyon azaltımı.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-7">7</span><span class="sdg sdg-13">13</span><span class="sdg sdg-8">8</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$12,50<small>/t</small></div><div class="per">Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="karadeniz" data-name="Karadeniz Rüzgar Çiftliği" data-price="12.50" data-color="v-renew" data-emoji="💨">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="renew">
+        <div class="proj-card__visual v-renew" style="background:linear-gradient(135deg,#ffce32 0%,#d18800 100%)">
+          <span>☀️</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill gold">Gold Standard</span>
+          <div class="stock"><span>80.000 ton mevcut</span><div class="bar"><i style="width:65%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇹🇷 Manisa, Türkiye</span><span class="dot"></span><span>Güneş</span></div>
+          <h3 class="proj-card__title">Ege Güneş Bahçesi</h3>
+          <p class="proj-card__desc">85 MW Manisa Salihli güneş enerjisi santrali. Yerel istihdam programı ve eğitim katkısıyla topluluk faydası.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-7">7</span><span class="sdg sdg-13">13</span><span class="sdg sdg-11">11</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$14,20<small>/t</small></div><div class="per">Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="ege" data-name="Ege Güneş Bahçesi" data-price="14.20" data-color="v-renew" data-emoji="☀️">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="blue">
+        <div class="proj-card__visual v-blue">
+          <span>🌊</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill">VCS</span>
+          <div class="stock"><span>35.000 ton mevcut</span><div class="bar"><i style="width:42%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇮🇩 Borneo, Endonezya</span><span class="dot"></span><span>Mavi Karbon</span></div>
+          <h3 class="proj-card__title">Borneo Mangrov Restorasyonu</h3>
+          <p class="proj-card__desc">2.400 hektar mangrov ekosistemi geri kazanımı. Sahil koruması, balıkçılık geçim kaynağı ve karbon sekestrasyonu.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-14">14</span><span class="sdg sdg-13">13</span><span class="sdg sdg-15">15</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$22,40<small>/t</small></div><div class="per">Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="borneo" data-name="Borneo Mangrov Restorasyonu" data-price="22.40" data-color="v-blue" data-emoji="🌊">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="soil">
+        <div class="proj-card__visual v-soil">
+          <span>🌾</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill">Plan Vivo</span>
+          <div class="stock"><span>25.000 ton mevcut</span><div class="bar"><i style="width:53%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇹🇷 Konya, Türkiye</span><span class="dot"></span><span>Toprak Karbon</span></div>
+          <h3 class="proj-card__title">İç Anadolu Tarımsal Sekestrasyon</h3>
+          <p class="proj-card__desc">320 küçük ölçekli çiftçi ile rejeneratif tarım. Toprakta organik karbon tutumu, su tasarrufu, verim artışı.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-2">2</span><span class="sdg sdg-15">15</span><span class="sdg sdg-13">13</span><span class="sdg sdg-1">1</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$11,90<small>/t</small></div><div class="per">Min. 50 ton</div></div>
+            <button class="proj-card__add" data-id="konya" data-name="İç Anadolu Tarımsal Sekestrasyon" data-price="11.90" data-color="v-soil" data-emoji="🌾">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="cookstove">
+        <div class="proj-card__visual v-cookstove">
+          <span>🔥</span>
+          <span class="vintage-pill">2023</span>
+          <span class="standard-pill gold">Gold Standard</span>
+          <div class="stock"><span>60.000 ton mevcut</span><div class="bar"><i style="width:71%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇰🇪 Nairobi, Kenya</span><span class="dot"></span><span>Topluluk · Cookstove</span></div>
+          <h3 class="proj-card__title">Kenya Verimli Pişirme İnisiyatifi</h3>
+          <p class="proj-card__desc">42.000 haneye yüksek verimli soba dağıtımı. Odun tüketimi %60 azaltım, iç hava kirliliği iyileştirme, kadın istihdamı.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-3">3</span><span class="sdg sdg-7">7</span><span class="sdg sdg-13">13</span><span class="sdg sdg-1">1</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$9,80<small>/t</small></div><div class="per">Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="kenya" data-name="Kenya Verimli Pişirme" data-price="9.80" data-color="v-cookstove" data-emoji="🔥">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="dac">
+        <div class="proj-card__visual v-dac">
+          <span>🏗️</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill gold">Puro.earth</span>
+          <div class="stock"><span>5.000 ton mevcut</span><div class="bar"><i style="width:24%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇮🇸 Hellisheidi, İzlanda</span><span class="dot"></span><span>DAC + Mineralizasyon</span></div>
+          <h3 class="proj-card__title">İzlanda Direkt Hava Yakalama</h3>
+          <p class="proj-card__desc">Jeotermal enerji ile çalışan 4.000 tCO₂e/yıl kapasiteli DAC tesisi. Yakalanan karbon bazaltta kalıcı olarak mineralize ediliyor — geri dönüşü olmayan kaldırma.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-9">9</span><span class="sdg sdg-13">13</span><span class="sdg sdg-7">7</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$320,00<small>/t</small></div><div class="per">Premium · Min. 5 ton</div></div>
+            <button class="proj-card__add" data-id="iceland" data-name="İzlanda DAC" data-price="320.00" data-color="v-dac" data-emoji="🏗️">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="renew">
+        <div class="proj-card__visual v-renew" style="background:linear-gradient(135deg,#5ba4ff 0%,#1e3a6b 100%)">
+          <span>💧</span>
+          <span class="vintage-pill">2023</span>
+          <span class="standard-pill">VCS</span>
+          <div class="stock"><span>200.000 ton mevcut</span><div class="bar"><i style="width:91%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇹🇷 Çoruh, Türkiye</span><span class="dot"></span><span>Hidroelektrik</span></div>
+          <h3 class="proj-card__title">Çoruh HES Verimlilik Projesi</h3>
+          <p class="proj-card__desc">Mevcut hidroelektrik tesisinde türbin yenileme ile %18 verim artışı. İlave kapasite kurulmadan ek temiz üretim.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-7">7</span><span class="sdg sdg-13">13</span><span class="sdg sdg-6">6</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$7,50<small>/t</small></div><div class="per">Hacim · Min. 100 ton</div></div>
+            <button class="proj-card__add" data-id="coruh" data-name="Çoruh HES Verimlilik" data-price="7.50" data-color="v-renew" data-emoji="💧">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="forest">
+        <div class="proj-card__visual v-forest">
+          <span>🌲</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill gold">Gold Standard</span>
+          <div class="stock"><span>18.000 ton mevcut</span><div class="bar"><i style="width:38%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇲🇬 Antsiranana, Madagaskar</span><span class="dot"></span><span>Yeniden Ağaçlandırma</span></div>
+          <h3 class="proj-card__title">Madagaskar Endemik Tür Ormanı</h3>
+          <p class="proj-card__desc">650 hektar yerel tür yeniden ormanlaştırma. Lemur habitatı koruma, çiftçi geçim programı, su havzası restorasyonu.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-15">15</span><span class="sdg sdg-13">13</span><span class="sdg sdg-1">1</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$24,60<small>/t</small></div><div class="per">Premium · Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="madagaskar" data-name="Madagaskar Endemik Orman" data-price="24.60" data-color="v-forest" data-emoji="🌲">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="dac">
+        <div class="proj-card__visual v-dac" style="background:linear-gradient(135deg,#3a3023 0%,#0d0805 100%)">
+          <span>⛏️</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill">Verra Biochar</span>
+          <div class="stock"><span>8.000 ton mevcut</span><div class="bar"><i style="width:31%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇮🇳 Karnataka, Hindistan</span><span class="dot"></span><span>Biyokömür</span></div>
+          <h3 class="proj-card__title">Hindistan Biyokömür Programı</h3>
+          <p class="proj-card__desc">Tarım atıklarından üretilen biyokömür ile 100+ yıllık karbon depolama. Yerel toprak verimliliği ve çiftçi geliri artışı.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-2">2</span><span class="sdg sdg-13">13</span><span class="sdg sdg-15">15</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$145,00<small>/t</small></div><div class="per">Kalıcı · Min. 10 ton</div></div>
+            <button class="proj-card__add" data-id="biochar" data-name="Hindistan Biyokömür" data-price="145.00" data-color="v-dac" data-emoji="⛏️">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="cookstove">
+        <div class="proj-card__visual v-methane">
+          <span>♻️</span>
+          <span class="vintage-pill">2023</span>
+          <span class="standard-pill">ACR</span>
+          <div class="stock"><span>45.000 ton mevcut</span><div class="bar"><i style="width:62%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇺🇸 Kaliforniya, ABD</span><span class="dot"></span><span>Metan Yakalama</span></div>
+          <h3 class="proj-card__title">California Çöplük Metan Yakalama</h3>
+          <p class="proj-card__desc">Düzenli depolama sahasından metan gazını yakalayıp elektriğe dönüştüren sistem. Atmosferik metan azaltımı 84× daha etkili.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-12">12</span><span class="sdg sdg-13">13</span><span class="sdg sdg-7">7</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$16,40<small>/t</small></div><div class="per">Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="california" data-name="California Metan Yakalama" data-price="16.40" data-color="v-methane" data-emoji="♻️">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="renew">
+        <div class="proj-card__visual v-renew" style="background:linear-gradient(135deg,#f0a850 0%,#a25a18 100%)">
+          <span>⚡</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill gold">Gold Standard</span>
+          <div class="stock"><span>28.000 ton mevcut</span><div class="bar"><i style="width:47%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇵🇭 Mindanao, Filipinler</span><span class="dot"></span><span>Mini-grid</span></div>
+          <h3 class="proj-card__title">Filipinler Köy Güneş Şebekesi</h3>
+          <p class="proj-card__desc">Şebekeden uzak 87 köyde mini-grid kurulumu. 12.000+ haneye temiz elektrik, eğitim ve sağlık hizmetlerinde dönüşüm.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-7">7</span><span class="sdg sdg-9">9</span><span class="sdg sdg-1">1</span><span class="sdg sdg-13">13</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$13,20<small>/t</small></div><div class="per">Min. 25 ton</div></div>
+            <button class="proj-card__add" data-id="filipinler" data-name="Filipinler Mini-grid" data-price="13.20" data-color="v-renew" data-emoji="⚡">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" data-type="forest">
+        <div class="proj-card__visual v-forest" style="background:linear-gradient(135deg,#3aa9d9 0%,#1f4f7a 100%)">
+          <span>🍃</span>
+          <span class="vintage-pill">2024</span>
+          <span class="standard-pill">VCS</span>
+          <div class="stock"><span>72.000 ton mevcut</span><div class="bar"><i style="width:84%"></i></div></div>
+        </div>
+        <div class="proj-card__body">
+          <div class="proj-card__meta"><span>🇹🇷 Artvin, Türkiye</span><span class="dot"></span><span>Orman İyileştirme</span></div>
+          <h3 class="proj-card__title">Karadeniz Orman İyileştirme</h3>
+          <p class="proj-card__desc">Doğu Karadeniz'de 4.500 hektar bozulmuş orman alanında ekosistem iyileştirme. Endemik tür çeşitliliği koruma, iklim direnci.</p>
+          <div class="proj-card__sdgs"><span class="sdg sdg-15">15</span><span class="sdg sdg-13">13</span><span class="sdg sdg-6">6</span></div>
+          <div class="proj-card__pricing">
+            <div class="proj-card__price"><div class="amount">$15,80<small>/t</small></div><div class="per">Min. 50 ton</div></div>
+            <button class="proj-card__add" data-id="artvin" data-name="Karadeniz Orman İyileştirme" data-price="15.80" data-color="v-forest" data-emoji="🍃">Sepete Ekle</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== TRUST BADGES =================== -->
+<section class="trust-row">
+  <div class="container">
+    <div class="trust-row__inner">
+      <div class="badge"><strong>VCS · Verra</strong><span>Verified Carbon Standard</span></div>
+      <div class="badge"><strong>Gold Standard</strong><span>WWF & SDG aligned</span></div>
+      <div class="badge"><strong>ACR</strong><span>American Carbon Registry</span></div>
+      <div class="badge"><strong>Plan Vivo</strong><span>Smallholder & community</span></div>
+      <div class="badge"><strong>Puro.earth</strong><span>Engineered removals</span></div>
+      <div class="badge"><strong>CCB</strong><span>Climate · Community · Biodiversity</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== RETIREMENT STEPS =================== -->
+<section class="retire">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Retirement flow</span>
+      <h2>Sertifika <strong>4 adımda</strong> elinizde</h2>
+      <p>Sepet → Ödeme → İptal (Retirement) → Sertifika. Aynı gün, blok zincir kayıtlı.</p>
+    </div>
+    <div class="retire__steps">
+      <div class="retire__step">
+        <div class="retire__num">01</div>
+        <h4>Projeleri seç</h4>
+        <p>Türü, ülkeyi, vintage'ı ve standardı filtrele. Portföy oluşturmak için birden fazla proje seçebilirsin.</p>
+      </div>
+      <div class="retire__step">
+        <div class="retire__num">02</div>
+        <h4>Sepeti onayla</h4>
+        <p>Toplam tonajı, projelere dağılımı ve ön‑maliyeti gör. Şirket bilgileri otomatik dolar.</p>
+      </div>
+      <div class="retire__step">
+        <div class="retire__num">03</div>
+        <h4>Krediyi iptal et</h4>
+        <p>Ödeme tamamlanır tamamlanmaz krediler ilgili registry'de (Verra, GS) iptal edilir — geri kullanılamaz.</p>
+      </div>
+      <div class="retire__step">
+        <div class="retire__num">04</div>
+        <h4>Sertifikayı al</h4>
+        <p>PDF + blok zincir kaydı. ESG raporuna otomatik işlenir, paydaş iletişiminde kullanıma hazır.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>Pazar yeri <strong>hakkında</strong></h2>
+    </div>
+    <div class="faq" id="faq">
+      <div class="faq__item">
+        <button class="faq__q">Karbon kredisi ne demek, neyi temsil ediyor?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">1 karbon kredisi = atmosferden engellenmiş veya kaldırılmış 1 ton CO₂e (karbondioksit eşdeğeri) gazı temsil eder. Bağımsız bir standart (VCS, Gold Standard vb.) tarafından doğrulanır ve her kredinin benzersiz seri numarası vardır.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">"Retirement" / iptal ne anlama geliyor?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Bir kredi iptal edildiğinde registry'de "retired" olarak işaretlenir ve bir daha kimse tarafından kullanılamaz. Bu, çift sayımın önüne geçer ve karbon iddiasının bütünlüğünü garantiler. Greengold ödemenizden sonra 24 saat içinde krediyi sizin adınıza iptal eder.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Hangi projeleri pazar yerine alıyorsunuz?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Sadece VCS, Gold Standard, ACR, CAR, Plan Vivo veya Puro.earth gibi tanınmış standartlardan doğrulanmış projeleri kabul ediyoruz. Ek olarak iç değerlendirme komitemiz; ek-kalite (additionality), kalıcılık ve topluluk faydası kriterlerini inceliyor. Reddi yüksek (rejected) listemiz şeffaf şekilde paylaşılır.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Vintage yılı neden önemli?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Vintage, kredinin temsil ettiği emisyon azaltımının gerçekleştiği yılı gösterir. Yeni vintage'lar (son 1-3 yıl) genellikle daha yüksek fiyatlanır çünkü güncellik ve raporlama uyumu açısından tercih edilir. CDP gibi raporlama sistemleri bazen 5 yıldan eski vintage'ları kabul etmez.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Ödemede hangi yöntemler destekleniyor?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Banka havalesi (TL ve USD), kurumsal kredi kartı ve önceden tanımlı kurumsal limit ile ödeme. 50.000 USD üzeri alımlarda fatura ile vadeli ödeme seçeneği mevcuttur. Tüm fatura ve makbuzlar dijital olarak panele düşer.</div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q">Kendi şirketim için bir karbon projesi geliştirmek istiyorum, destek alabilir miyim?<span class="plus">+</span></button>
+        <div class="faq__a"><div class="faq__a-inner">Evet. Greengold Origination ekibimiz; fizibilite çalışmasından doğrulama (validation) ve doğrulayıcı (verifier) yönetimine kadar tüm yaşam döngüsünde sizinle çalışır. Geliştirilen krediler isterseniz pazar yerimizde satılabilir.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FLOATING CART BUTTON =================== -->
+<button class="cart-fab" id="cartFab">
+  <span>🛒</span>
+  <span>Sepetim</span>
+  <span class="count" id="cartCount">0</span>
+</button>
+
+<!-- =================== CART DRAWER =================== -->
+<div class="cart-drawer__overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Karbon kredisi sepeti">
+  <div class="cart-head">
+    <h3>Karbon Kredisi Sepetim</h3>
+    <button class="x" id="cartClose" aria-label="Kapat">×</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <div class="ico">🛒</div>
+      <div style="font-weight:700;color:var(--navy);margin-bottom:6px">Sepetin henüz boş</div>
+      <div style="font-size:13.5px">Pazar yerinden bir proje ekleyerek başla.</div>
+    </div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-row"><span>Toplam ton</span><span id="cartTons">0 tCO₂e</span></div>
+    <div class="cart-row"><span>Ara toplam</span><span id="cartSubtotal">$0,00</span></div>
+    <div class="cart-row"><span>Pazar ücreti (%2,5)</span><span id="cartFee">$0,00</span></div>
+    <div class="cart-row total"><span>Toplam</span><span id="cartTotal">$0,00</span></div>
+    <button class="cart-checkout">Sertifikayı Hazırla — Ödemeye Geç</button>
+    <div class="cart-trust">
+      <span>🔒 SSL Şifreli</span>
+      <span>📜 Blok zincir kayıtlı</span>
+      <span>✓ ISO 27001</span>
+    </div>
+  </div>
+</aside>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="logo">
+          <div class="logo__mark">G</div>
+          <div>
+            <div class="logo__text" style="color:#fff">Green<span style="color:var(--gold-light)">gold</span></div>
+            <span class="logo__sub" style="color:#7be6cd">Carbon Intelligence</span>
+          </div>
+        </div>
+        <p>Şirketler için kurumsal karbon ölçüm, ESG raporlama ve sürdürülebilirlik dönüşüm platformu. Ölçüyoruz, raporluyoruz, azaltıyoruz.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="GitHub">{ }</a>
+        </div>
+      </div>
+      <div>
+        <h5>Çözümler</h5>
+        <ul>
+          <li><a href="olcum.html">Karbon Ölçüm</a></li>
+          <li><a href="#">ESG Raporlama</a></li>
+          <li><a href="#">Net Zero Yol Haritası</a></li>
+          <li><a href="pazar.html">Karbon Kredisi Pazarı</a></li>
+          <li><a href="#">Yeşil Finansman Erişimi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kaynaklar</h5>
+        <ul>
+          <li><a href="#">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#">Sürdürülebilirlik Akademisi</a></li>
+          <li><a href="#">Vaka Çalışmaları</a></li>
+          <li><a href="#">Sektör Raporları</a></li>
+          <li><a href="#">Geliştirici Dokümanı</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Şirket</h5>
+        <ul>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Misyon &amp; Etki</a></li>
+          <li><a href="#">Kariyer</a></li>
+          <li><a href="#">Basın Kiti</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Greengold Carbon Intelligence — Tüm hakları saklıdır.</div>
+      <div class="legal">
+        <a href="#">Yasal Uyarı</a>
+        <a href="#">Gizlilik &amp; KVKK</a>
+        <a href="#">Çerez Politikası</a>
+        <a href="#">Hizmet Şartları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script>
+  // ---------- Marketplace Filters ----------
+  document.querySelectorAll('[data-filter="type"] .fchip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter="type"] .fchip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const val = chip.dataset.val;
+      document.querySelectorAll('#projGrid .proj-card').forEach(card => {
+        card.style.display = (val === 'all' || card.dataset.type === val) ? '' : 'none';
+      });
+    });
+  });
+
+  // ---------- Cart ----------
+  const cart = [];
+  const cartFab = document.getElementById('cartFab');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const cartClose = document.getElementById('cartClose');
+  const cartBody = document.getElementById('cartBody');
+  const cartFoot = document.getElementById('cartFoot');
+  const cartEmpty = document.getElementById('cartEmpty');
+  const cartCount = document.getElementById('cartCount');
+
+  function fmtUsd(n){ return '$' + n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+  function openCart(){ cartDrawer.classList.add('open'); cartOverlay.classList.add('show'); }
+  function closeCart(){ cartDrawer.classList.remove('open'); cartOverlay.classList.remove('show'); }
+  cartFab.addEventListener('click', openCart);
+  cartClose.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+
+  function render(){
+    cartCount.textContent = cart.reduce((s,i)=>s+i.qty,0);
+    if(cart.length === 0){
+      cartEmpty.style.display = 'block';
+      cartFoot.style.display = 'none';
+      // remove items if any
+      [...cartBody.querySelectorAll('.cart-item')].forEach(n=>n.remove());
+      return;
+    }
+    cartEmpty.style.display = 'none';
+    cartFoot.style.display = 'block';
+
+    [...cartBody.querySelectorAll('.cart-item')].forEach(n=>n.remove());
+    cart.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <div class="cart-item__img ${item.color}">${item.emoji}</div>
+        <div class="cart-item__main">
+          <div class="cart-item__title">${item.name}</div>
+          <div class="cart-item__meta">${fmtUsd(item.price)}/tCO₂e</div>
+          <div class="cart-item__qty">
+            <button data-act="dec">−</button>
+            <input type="text" value="${item.qty}" readonly />
+            <span class="unit">ton</span>
+            <button data-act="inc">+</button>
+          </div>
+          <button class="cart-item__rm" data-act="rm">Kaldır</button>
+        </div>
+        <div class="cart-item__price">
+          ${fmtUsd(item.price * item.qty)}
+          <small>${item.qty} × ${fmtUsd(item.price)}</small>
+        </div>
+      `;
+      div.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', () => {
+          const a = b.dataset.act;
+          if(a === 'inc') item.qty++;
+          else if(a === 'dec') item.qty = Math.max(1, item.qty - 1);
+          else if(a === 'rm') cart.splice(idx,1);
+          render();
+        });
+      });
+      cartBody.appendChild(div);
+    });
+
+    const tons = cart.reduce((s,i)=>s+i.qty,0);
+    const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const fee = subtotal * 0.025;
+    const total = subtotal + fee;
+    document.getElementById('cartTons').textContent = tons.toLocaleString('tr-TR') + ' tCO₂e';
+    document.getElementById('cartSubtotal').textContent = fmtUsd(subtotal);
+    document.getElementById('cartFee').textContent = fmtUsd(fee);
+    document.getElementById('cartTotal').textContent = fmtUsd(total);
+  }
+
+  document.querySelectorAll('.proj-card__add').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const existing = cart.find(i => i.id === id);
+      if(existing){ existing.qty += 25; }
+      else {
+        cart.push({
+          id,
+          name: btn.dataset.name,
+          price: parseFloat(btn.dataset.price),
+          color: btn.dataset.color,
+          emoji: btn.dataset.emoji,
+          qty: 25
+        });
+      }
+      btn.textContent = 'Sepete Eklendi ✓';
+      btn.style.background = 'var(--gold)';
+      btn.style.color = '#3a2a06';
+      setTimeout(()=>{
+        btn.textContent = 'Sepete Ekle';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 1400);
+      render();
+      // gentle pulse on the FAB
+      cartFab.animate([{transform:'scale(1)'},{transform:'scale(1.1)'},{transform:'scale(1)'}],{duration:400});
+    });
+  });
+
+  render();
+</script>
+
+</body>
+</html>
