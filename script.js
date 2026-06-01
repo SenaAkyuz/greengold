@@ -7,7 +7,7 @@ const CF_FACTORS = {
   flightShortPerKm: 0.151, // kg CO2e / passenger-km
   flightLongPerKm: 0.148,  // kg CO2e / passenger-km
 };
-const CF_FLIGHT_KM = { short: 1500, long: 6000 }; // representative one-way distance per flight (km)
+const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, business: 2.9, first: 4.0 } }; // kg CO2e/passenger-km (economy) + DEFRA class multipliers
 
   // ---------- Tabs (Bireysel / Kurumsal) ----------
   document.querySelectorAll('.seg button').forEach(btn=>{
@@ -201,8 +201,14 @@ const CF_FLIGHT_KM = { short: 1500, long: 6000 }; // representative one-way dist
       const electricity = num('cfcElec') * 12 * CF_FACTORS.electricity;
       const naturalGas  = num('cfcGas')  * 12 * CF_FACTORS.naturalGas;
       const waste       = num('cfcWaste') * 52 * CF_FACTORS.waste;
-      const flights     = num('cfcShort') * CF_FLIGHT_KM.short * CF_FACTORS.flightShortPerKm
-                        + num('cfcLong')  * CF_FLIGHT_KM.long  * CF_FACTORS.flightLongPerKm;
+      let flights = 0;
+      document.querySelectorAll('#cfcFlights .cfc-flight').forEach(row => {
+        const kmEl = row.querySelector('.cfc-flight__km'), nEl = row.querySelector('.cfc-flight__n'), clsEl = row.querySelector('.cfc-flight__class');
+        const km = parseFloat(kmEl && kmEl.value) || 0;
+        const n  = parseFloat(nEl && nEl.value) || 0;
+        const cls = clsEl ? clsEl.value : 'economy';
+        if(km > 0 && n > 0) flights += km * n * CF_FLIGHT.basePerKm * (CF_FLIGHT.classMult[cls] || 1);
+      });
       const kg = vehicle + electricity + naturalGas + waste + flights; // all categories summed
       total.textContent = Math.round(kg).toLocaleString('en-US');
       if(totalT) totalT.innerHTML = '≈ ' + (kg/1000).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' t CO<sub>2</sub>/year';
@@ -221,6 +227,30 @@ const CF_FLIGHT_KM = { short: 1500, long: 6000 }; // representative one-way dist
       el.addEventListener('input', recalc);
       el.addEventListener('change', recalc);
     });
+    // flights: multi-row add / remove / update
+    const cfcFlights = document.getElementById('cfcFlights');
+    function bindFlightRow(row){
+      row.querySelectorAll('input, select').forEach(el => { el.addEventListener('input', recalc); el.addEventListener('change', recalc); });
+      const rm = row.querySelector('.cfc-flight__rm');
+      if(rm) rm.addEventListener('click', () => {
+        if(cfcFlights.querySelectorAll('.cfc-flight').length > 1){ row.remove(); recalc(); }
+      });
+    }
+    if(cfcFlights){
+      cfcFlights.querySelectorAll('.cfc-flight').forEach(bindFlightRow);
+      const addBtn = document.getElementById('cfcAddFlight');
+      const updBtn = document.getElementById('cfcUpdate');
+      if(addBtn) addBtn.addEventListener('click', () => {
+        const tpl = cfcFlights.querySelector('.cfc-flight');
+        const clone = tpl.cloneNode(true);
+        clone.querySelectorAll('input').forEach(i => i.value = '');
+        const sel = clone.querySelector('.cfc-flight__class'); if(sel) sel.value = 'economy';
+        cfcFlights.appendChild(clone);
+        bindFlightRow(clone);
+        recalc();
+      });
+      if(updBtn) updBtn.addEventListener('click', recalc);
+    }
     initChart();
     recalc();
   })();

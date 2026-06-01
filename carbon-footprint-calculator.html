@@ -127,15 +127,22 @@
             </div>
 
             <div class="cfc-panel" data-cfc-panel="flights">
-              <div class="cfc-row2">
-                <div class="cfc-field">
-                  <label for="cfcShort">Short-haul flights / year</label>
-                  <input id="cfcShort" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="0" value="2">
+              <div class="cfc-flights" id="cfcFlights">
+                <div class="cfc-flight">
+                  <input class="cfc-input cfc-flight__km" type="number" min="0" inputmode="numeric" placeholder="Distance (km)" aria-label="Flight distance (km)" value="1500">
+                  <input class="cfc-input cfc-flight__n" type="number" min="0" inputmode="numeric" placeholder="Number of Flights" aria-label="Number of flights" value="2">
+                  <select class="cfc-select cfc-flight__class" aria-label="Flight class">
+                    <option value="economy">Economy</option>
+                    <option value="premium">Premium Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first">First</option>
+                  </select>
+                  <button type="button" class="cfc-flight__rm" aria-label="Remove flight">✕</button>
                 </div>
-                <div class="cfc-field">
-                  <label for="cfcLong">Long-haul flights / year</label>
-                  <input id="cfcLong" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="0" value="1">
-                </div>
+              </div>
+              <div class="cfc-flight-actions">
+                <button type="button" class="btn btn--ghost" id="cfcAddFlight">+ Add Flight</button>
+                <button type="button" class="btn btn--primary" id="cfcUpdate">Update</button>
               </div>
             </div>
           </div>
