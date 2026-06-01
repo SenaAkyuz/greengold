@@ -8,13 +8,19 @@
 
   // ---------- Mega Menu (open on hover + keep on click for touch) ----------
   document.querySelectorAll('.nav>ul>li').forEach(li=>{
-    li.addEventListener('mouseenter',()=>li.classList.add('open'));
-    li.addEventListener('mouseleave',()=>li.classList.remove('open'));
+    const hasMega = !!li.querySelector('.mega');
+    let closeTimer;
+    li.addEventListener('mouseenter',()=>{ clearTimeout(closeTimer); li.classList.add('open'); });
+    li.addEventListener('mouseleave',()=>{
+      if(hasMega){ closeTimer = setTimeout(()=>li.classList.remove('open'), 180); }  // grace period
+      else { li.classList.remove('open'); }
+    });
     const a = li.querySelector(':scope > a');
     if(a){
       a.addEventListener('click',e=>{
         if(li.querySelector('.mega')){
           e.preventDefault();
+          clearTimeout(closeTimer);
           document.querySelectorAll('.nav>ul>li').forEach(o=>{ if(o!==li) o.classList.remove('open'); });
           li.classList.toggle('open');
         }
@@ -26,22 +32,27 @@
   });
 
   // ---------- Hero Slider ----------
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.hero__dot');
-  let cur = 0, timer;
-  function go(i){
-    cur = (i + slides.length) % slides.length;
-    slides.forEach((s,idx)=>s.classList.toggle('active',idx===cur));
-    dots.forEach((d,idx)=>d.classList.toggle('active',idx===cur));
+  const heroPrev = document.getElementById('heroPrev');
+  const heroNext = document.getElementById('heroNext');
+  const heroViewport = document.getElementById('heroViewport');
+  if (heroViewport && heroPrev && heroNext) {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.hero__dot');
+    let cur = 0, timer;
+    function go(i){
+      cur = (i + slides.length) % slides.length;
+      slides.forEach((s,idx)=>s.classList.toggle('active',idx===cur));
+      dots.forEach((d,idx)=>d.classList.toggle('active',idx===cur));
+    }
+    function startAuto(){ timer = setInterval(()=>go(cur+1), 5500); }
+    function resetAuto(){ clearInterval(timer); startAuto(); }
+    dots.forEach(d=>d.addEventListener('click',()=>{ go(+d.dataset.go); resetAuto(); }));
+    heroPrev.addEventListener('click',()=>{ go(cur-1); resetAuto(); });
+    heroNext.addEventListener('click',()=>{ go(cur+1); resetAuto(); });
+    heroViewport.addEventListener('mouseenter',()=>clearInterval(timer));
+    heroViewport.addEventListener('mouseleave',startAuto);
+    startAuto();
   }
-  function startAuto(){ timer = setInterval(()=>go(cur+1), 5500); }
-  function resetAuto(){ clearInterval(timer); startAuto(); }
-  dots.forEach(d=>d.addEventListener('click',()=>{ go(+d.dataset.go); resetAuto(); }));
-  document.getElementById('heroPrev').addEventListener('click',()=>{ go(cur-1); resetAuto(); });
-  document.getElementById('heroNext').addEventListener('click',()=>{ go(cur+1); resetAuto(); });
-  document.getElementById('heroViewport').addEventListener('mouseenter',()=>clearInterval(timer));
-  document.getElementById('heroViewport').addEventListener('mouseleave',startAuto);
-  startAuto();
 
   // ---------- Carbon Calculator ----------
   (function(){
@@ -58,7 +69,9 @@
     const resTotal = document.getElementById('resTotal');
     const resPer = document.getElementById('resPer');
 
-    const periodLabels = { '1':'yıllık', '0.5':'6 aylık', '0.25':'3 aylık', '0.0833':'aylık' };
+    if(!energySlider || !staffSlider) return;   // calculator not present (sub-pages) -> skip
+
+    const periodLabels = { '1':'annual', '0.5':'semi-annual', '0.25':'quarterly', '0.0833':'monthly' };
 
     function getActiveFactor(){
       const a = document.querySelector('.sector.active');
@@ -70,16 +83,16 @@
     }
     function getPeriodLabel(){
       const a = document.querySelector('.period.active');
-      return a ? (periodLabels[a.dataset.mult] || 'yıllık') : 'yıllık';
+      return a ? (periodLabels[a.dataset.mult] || 'annual') : 'annual';
     }
 
     function recalc(){
-      const energy = parseInt(energySlider.value, 10);   // kWh / yıl
+      const energy = parseInt(energySlider.value, 10);   // kWh / year
       const staff  = parseInt(staffSlider.value, 10);
-      const factor = getActiveFactor();                   // kg CO2e / kWh (sektörel)
+      const factor = getActiveFactor();                   // kg CO2e / kWh (by sector)
       const mult   = getActiveMult();
 
-      // kg → ton CO2e, dönem çarpanıyla
+      // kg -> tonne CO2e, with period multiplier
       const totalT = (energy * factor / 1000) * mult;
       const perT   = totalT / Math.max(1,staff);
 

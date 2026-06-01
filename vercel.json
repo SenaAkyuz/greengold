@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/pazar.html", "destination": "/carbon-credits.html", "permanent": true },
+    { "source": "/fiyatlandirma.html", "destination": "/pricing.html", "permanent": true }
+  ]
+}

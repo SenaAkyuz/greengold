@@ -4,6 +4,9 @@
 # Dependencies (varsa)
 node_modules/
 
+# Internal planning docs (not deployed)
+prompts/
+
 # OS / editor
 .DS_Store
 Thumbs.db
