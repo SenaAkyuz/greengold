@@ -1,6 +1,22 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
-    { "source": "/pazar.html", "destination": "/carbon-credits.html", "permanent": true },
-    { "source": "/fiyatlandirma.html", "destination": "/pricing.html", "permanent": true }
+    { "source": "/donate-us", "destination": "/donate", "permanent": true },
+    { "source": "/olcum", "destination": "/carbon-measurement", "permanent": true },
+    { "source": "/event-details/future-of-green-business-v", "destination": "/events", "permanent": true },
+    { "source": "/event-details/future-of-green-business-iii", "destination": "/events", "permanent": true },
+    { "source": "/kopyası-about-us", "destination": "/about-us", "permanent": true },
+    { "source": "/kopyası-monitoring-and-evaluation", "destination": "/about-us", "permanent": true },
+    { "source": "/kopyası-education-and-engagement", "destination": "/about-us", "permanent": true },
+    { "source": "/kopyası-develop-a-cooperation", "destination": "/about-us", "permanent": true },
+    { "source": "/pazar.html", "destination": "/carbon-credits", "permanent": true },
+    { "source": "/fiyatlandirma.html", "destination": "/climate-membership", "permanent": true },
+    { "source": "/post/strengthening-brand-reputation-with-carbon-credits-the-new-gold-standard-of-sustainable-communicati", "destination": "/blog/strengthening-brand-reputation-with-carbon-credits", "permanent": true },
+    { "source": "/post/the-role-of-sustainability-partnerships-in-eco-friendly-initiatives-unlocking-the-power-of-eco-part", "destination": "/blog/the-role-of-sustainability-partnerships-in-eco-friendly-initiatives", "permanent": true },
+    { "source": "/post/carbon-donation-carbon-footprint-calculation-and-offset-donation-to-prevent-desertification-of-fore", "destination": "/blog/carbon-donation-offset-to-prevent-forest-desertification", "permanent": true },
+    { "source": "/post/:slug*", "destination": "/blog/:slug*", "permanent": true },
+    { "source": "/tr/post/:slug*", "destination": "/blog", "permanent": true },
+    { "source": "/tr/:path*", "destination": "/", "permanent": true }
   ]
 }

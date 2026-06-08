@@ -67,7 +67,7 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
 
   // ---------- Carbon Calculator ----------
   (function(){
-    const fmtTr = (n, dec=0) => n.toLocaleString('tr-TR',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+    const fmtTr = (n, dec=0) => n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});
     const energySlider = document.getElementById('energySlider');
     const staffSlider = document.getElementById('staffSlider');
     const energyVal = document.getElementById('energyVal');
@@ -143,12 +143,13 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
 
   // ---------- Stats Counter Animation ----------
   (function(){
-    const fmtTr = (n, dec) => n.toLocaleString('tr-TR',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+    const fmtTr = (n, dec) => n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});
     const els = document.querySelectorAll('.stat__num[data-target]');
     if(!els.length) return;
     const animate = el => {
       const target = parseFloat(el.dataset.target);
       const dec = (el.dataset.target.includes('.')?1:0);
+      const prefix = el.dataset.prefix || '';
       const small = el.querySelector('small');
       const tail = small ? small.outerHTML : '';
       let start = null, dur = 1600;
@@ -156,7 +157,7 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
         if(!start) start = t;
         const p = Math.min(1,(t-start)/dur);
         const eased = 1 - Math.pow(1-p, 3);
-        el.innerHTML = fmtTr(target * eased, dec) + tail;
+        el.innerHTML = prefix + fmtTr(target * eased, dec) + tail;
         if(p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -253,4 +254,30 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
     }
     initChart();
     recalc();
+  })();
+
+  // ---------- Cookie Consent Banner ----------
+  (function(){
+    var banner = document.getElementById('cookieBanner');
+    if(!banner) return;
+    var KEY = 'gg_cookie_consent';
+
+    function loadAnalytics(){
+      // TODO Faz 8: GA4 / analytics scriptleri YALNIZ 'accept' onayında burada yüklenecek.
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch(e){}
+    if(saved === 'accept'){ loadAnalytics(); }
+    if(!saved){ banner.hidden = false; }
+
+    function choose(v){
+      try { localStorage.setItem(KEY, v); } catch(e){}
+      banner.hidden = true;
+      if(v === 'accept'){ loadAnalytics(); }
+    }
+    var acc = document.getElementById('cookieAccept');
+    var rej = document.getElementById('cookieReject');
+    if(acc) acc.addEventListener('click', function(){ choose('accept'); });
+    if(rej) rej.addEventListener('click', function(){ choose('reject'); });
   })();
