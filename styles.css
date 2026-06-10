@@ -478,8 +478,9 @@
     .header__cta .btn{padding:8px 12px;font-size:13px}
     .topbar .container{height:auto;padding:8px 16px;flex-wrap:wrap}
   }
-  @media (max-width: 420px){
-    .header__cta{display:none}                 /* çok dar ekranda Request Demo gizle (hamburger yeterli) */
+  @media (max-width: 400px){
+    .header__cta .btn{padding:7px 10px;font-size:12px}   /* dar ekranda kompakt, görünür kalsın */
+    .header__bar{gap:8px}
   }
 
 /* =========================================================
@@ -1630,17 +1631,47 @@
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2){ opacity:0; }
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 @media (max-width:1100px){
-  .nav-toggle{ display:inline-flex; flex-direction:column; margin-left:auto; }
+  .nav-toggle{ display:inline-flex; flex-direction:column; order:3; margin-left:8px; }
+  .header__cta{ display:block; order:2; margin-left:auto; }   /* Demo solda, hamburger en sağda */
+
+  /* --- Modern mobil menü paneli --- */
   .nav.is-open{
-    display:flex !important; flex-direction:column; align-items:flex-start; gap:6px;
+    display:flex !important; flex-direction:column; align-items:stretch; gap:0;
     position:absolute; top:100%; left:0; right:0; z-index:50;
-    background:#fff; padding:16px 20px; box-shadow:0 12px 28px rgba(0,0,0,.12);
-    max-height:80vh; overflow:auto;
+    background:#fff; padding:6px 16px 16px;
+    box-shadow:0 20px 44px rgba(0,0,0,.18); border-top:1px solid var(--line);
+    border-radius:0 0 18px 18px; max-height:85vh; overflow:auto;
+    -webkit-overflow-scrolling:touch;
   }
-  .nav.is-open>ul{ flex-direction:column; align-items:flex-start; gap:0; width:100%; }
-  .nav.is-open>ul>li{ width:100%; }
-  .nav.is-open a, .nav.is-open [role="button"]{ width:100%; padding:10px 0; }
-  .nav.is-open .mega{ position:static; display:grid; box-shadow:none; padding:8px 0 8px 14px; background:transparent; }
+  .nav.is-open>ul{ flex-direction:column; align-items:stretch; gap:0; width:100%; }
+  .nav.is-open>ul>li{ width:100%; border-bottom:1px solid rgba(0,0,0,.07); position:relative; }
+  .nav.is-open>ul>li:last-child{ border-bottom:0; }
+  /* üst düzey linkler — net, dokunması kolay satırlar */
+  .nav.is-open>ul>li>a{
+    display:flex; align-items:center; justify-content:space-between;
+    width:100%; padding:15px 2px; font-size:15.5px; font-weight:600; color:var(--navy);
+    border-bottom:0; border-radius:8px; transition:color .15s, background .15s;
+  }
+  .nav.is-open>ul>li>a:hover{ color:var(--green-dark); border-bottom-color:transparent; }
+  .nav.is-open>ul>li>a.active{ color:var(--green-dark); }
+  .nav.is-open>ul>li>a.active::before{
+    content:""; position:absolute; left:-16px; top:12px; bottom:12px; width:3px;
+    background:var(--green); border-radius:0 3px 3px 0;
+  }
+  /* chevron'u sağa hizala, açıkken döndür (mevcut .chev kuralları döndürüyor) */
+  .nav.is-open>ul>li>a .chev{ margin-left:auto; }
+
+  /* --- Projeler alt-menüsü: promo kartı gizli, temiz alt-liste --- */
+  .nav.is-open .mega{ position:static; display:none; box-shadow:none; padding:0; margin:-2px 0 10px; background:transparent; grid-template-columns:1fr; }
+  .nav.is-open>ul>li.open .mega{ display:block; }
+  .nav.is-open .mega .feature{ display:none; }
+  .nav.is-open .mega .col-list{ padding-left:4px; }
+  .nav.is-open .mega .col-list h4{ font-size:10.5px; letter-spacing:1.4px; color:var(--muted); text-transform:uppercase; margin:0 0 4px; }
+  .nav.is-open .mega .col-list a{
+    display:block; width:100%; padding:11px 0 11px 14px; font-size:14.5px; font-weight:500;
+    color:#2a3839; border-left:2px solid var(--line); border-bottom:0;
+  }
+  .nav.is-open .mega .col-list a:hover{ color:var(--green-dark); border-left-color:var(--green); }
 }
 
 /* =========================================================

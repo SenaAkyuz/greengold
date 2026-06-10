@@ -316,7 +316,7 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
       t.setAttribute('aria-label', o ? 'Close menu':'Open menu');
     }
     t.addEventListener('click', function(){ setOpen(!nav.classList.contains('is-open')); });
-    nav.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+    nav.addEventListener('click', function(e){ var a=e.target.closest('a'); if(a && a.getAttribute('href')) setOpen(false); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
   })();
 
