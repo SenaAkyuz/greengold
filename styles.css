@@ -1662,7 +1662,7 @@
   .nav.is-open>ul>li>a .chev{ margin-left:auto; }
 
   /* --- Projeler alt-menüsü: promo kartı gizli, temiz alt-liste --- */
-  .nav.is-open .mega{ position:static; display:none; box-shadow:none; padding:0; margin:-2px 0 10px; background:transparent; grid-template-columns:1fr; }
+  .nav.is-open .mega{ position:static; transform:none; left:auto; top:auto; width:auto; display:none; box-shadow:none; padding:0; margin:-2px 0 10px; background:transparent; grid-template-columns:1fr; }
   .nav.is-open>ul>li.open .mega{ display:block; }
   .nav.is-open .mega .feature{ display:none; }
   .nav.is-open .mega .col-list{ padding-left:4px; }
