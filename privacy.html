@@ -7,6 +7,9 @@
 <meta name="description" content="How Green Gold Foundation collects, uses, and protects your personal data under KVKK and GDPR." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/privacy" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/privacy">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/privacy">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/privacy">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/privacy">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/privacy">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -84,7 +97,7 @@
   </div>
 </header>
 
-<main class="about">
+<main id="main" class="about">
 
   <!-- HERO -->
   <section class="about-hero">
@@ -94,7 +107,7 @@
     <div class="container about-hero__inner">
       <span class="about-eyebrow">LEGAL</span>
       <h1 class="about-h1">Privacy &amp; Data Protection</h1>
-      <p class="about-lead">Last updated: [___]</p>
+      <p class="about-lead">Last updated: 9 June 2026</p>
     </div>
   </section>
 
@@ -103,7 +116,7 @@
       <div class="legal-page">
         <p>Green Gold Foundation ("we", "us", "the Foundation") respects your privacy and is committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information when you use this website, in line with the Turkish Personal Data Protection Law No. 6698 ("KVKK") and the EU General Data Protection Regulation (EU) 2016/679 ("GDPR").</p>
 
-        <p><strong>Data Controller:</strong> Green Gold Foundation [legal entity name — to be confirmed]<br>
+        <p><strong>Data Controller:</strong> Green Gold Foundation<br>
         Address: Boulevard du 30 Juin, Immeuble Crown Tower, Kinshasa, Democratic Republic of the Congo<br>
         Email: <a href="mailto:info@greengoldfondation.com">info@greengoldfondation.com</a> · Phone: (+243) 829 000 828</p>
 
@@ -123,10 +136,10 @@
         <p>We may share data with service providers who help us operate the site and our communications (e.g., email, hosting, analytics providers), and with authorities where required by law. We do not sell your personal data.</p>
 
         <h2>5. International transfers</h2>
-        <p>As we operate across regions, your data may be processed in countries other than your own. Where this occurs, we take steps to ensure appropriate safeguards are in place. [Specific transfer mechanisms — to be completed]</p>
+        <p>As we operate across regions, your data may be processed in countries other than your own. Where this occurs, we take steps to ensure appropriate safeguards are in place. Where personal data is transferred outside your country or the European Economic Area, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses approved by the European Commission or other transfer mechanisms permitted by applicable law.</p>
 
         <h2>6. Retention</h2>
-        <p>We keep personal data only as long as necessary for the purposes described above or as required by law. [Specific retention periods — to be completed]</p>
+        <p>We keep personal data only as long as necessary for the purposes described above or as required by law. We retain personal data only for as long as necessary for the purposes described above or as required by applicable law. For example, contact and membership records are kept for the duration of our relationship with you and for a reasonable period afterwards, after which they are deleted or anonymised.</p>
 
         <h2>7. Your rights</h2>
         <p>Depending on your location, you have rights including: access to your data; correction; deletion; restriction or objection to processing; data portability; and withdrawal of consent at any time.</p>
@@ -140,7 +153,7 @@
         <p>We apply reasonable technical and organizational measures to protect your data against unauthorized access, loss, or misuse.</p>
 
         <h2>9. Children</h2>
-        <p>This website is not directed to children under [16/18], and we do not knowingly collect their data.</p>
+        <p>This website is not directed to children under 16, and we do not knowingly collect their data.</p>
 
         <h2>10. Changes</h2>
         <p>We may update this policy from time to time. The latest version will always be available on this page.</p>

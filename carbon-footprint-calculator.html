@@ -7,6 +7,9 @@
 <meta name="description" content="Estimate your annual CO2 emissions from vehicle, energy, natural gas, waste, and flights with our free carbon footprint calculator." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/carbon-footprint-calculator" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/carbon-footprint-calculator">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/carbon-footprint-calculator">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/carbon-footprint-calculator">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -25,6 +28,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -34,6 +38,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/carbon-footprint-calculator">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/carbon-footprint-calculator">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -51,7 +60,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -85,7 +98,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="block cfcpage-top">
     <div class="container">
       <div class="section-head">

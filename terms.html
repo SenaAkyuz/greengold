@@ -7,6 +7,9 @@
 <meta name="description" content="The terms governing your use of the Green Gold Foundation website." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/terms" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/terms">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/terms">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/terms">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/terms">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/terms">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -84,7 +97,7 @@
   </div>
 </header>
 
-<main class="about">
+<main id="main" class="about">
 
   <!-- HERO -->
   <section class="about-hero">
@@ -94,7 +107,7 @@
     <div class="container about-hero__inner">
       <span class="about-eyebrow">LEGAL</span>
       <h1 class="about-h1">Terms of Service</h1>
-      <p class="about-lead">Last updated: [___]</p>
+      <p class="about-lead">Last updated: 9 June 2026</p>
     </div>
   </section>
 
@@ -104,7 +117,7 @@
         <p>By accessing or using this website, you agree to these Terms of Service. If you do not agree, please do not use the site.</p>
 
         <h2>1. About this site</h2>
-        <p>This website is operated by Green Gold Foundation [legal entity name — to be confirmed] and provides information about the Foundation's work, including forest protection programs, a carbon footprint calculator, membership information, and an overview of carbon credit projects.</p>
+        <p>This website is operated by Green Gold Foundation and provides information about the Foundation's work, including forest protection programs, a carbon footprint calculator, membership information, and an overview of carbon credit projects.</p>
 
         <h2>2. Use of the site</h2>
         <p>You agree to use the site lawfully and not to misuse it, disrupt its operation, or attempt to gain unauthorized access to any part of it or its systems.</p>
@@ -116,7 +129,7 @@
         <p>Information on this site, including any carbon footprint calculations, figures, and estimates, is provided for general informational purposes only and does not constitute professional, financial, or legal advice. Calculator results are estimates and are not guaranteed to be exact.</p>
 
         <h2>5. Donations and memberships</h2>
-        <p>Donation pledges and membership inquiries submitted through the site are expressions of interest; online payment is not currently processed through this website, and we will contact you to complete any arrangement. [Payment and membership terms — to be added when online payment is enabled.]</p>
+        <p>Donation pledges and membership inquiries submitted through the site are expressions of interest; online payment is not currently processed through this website, and we will contact you to complete any arrangement. We do not currently process payments directly through this website. Membership and donation arrangements are completed by contacting us, and any applicable terms will be provided to you at that time.</p>
 
         <h2>6. Third-party links</h2>
         <p>The site may link to third-party websites that we do not control. We are not responsible for their content or practices.</p>
@@ -131,7 +144,7 @@
         <p>We may update these terms from time to time. The latest version will be available on this page.</p>
 
         <h2>10. Governing law</h2>
-        <p>These terms are governed by the laws of [jurisdiction — to be confirmed], without regard to conflict-of-law principles.</p>
+        <p>These terms are governed by the laws of the Democratic Republic of the Congo, without regard to conflict-of-law principles.</p>
 
         <h2>11. Contact</h2>
         <p>Questions about these terms: <a href="mailto:info@greengoldfondation.com">info@greengoldfondation.com</a>.</p>

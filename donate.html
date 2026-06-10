@@ -7,6 +7,9 @@
 <meta name="description" content="Fund today and together, we can ensure a greener and more sustainable future for generations to come." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/donate" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/donate">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/donate">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/donate">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/donate">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/donate">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -84,7 +97,7 @@
   </div>
 </header>
 
-<main class="about">
+<main id="main" class="about">
 
   <!-- HERO -->
   <section class="about-hero">
@@ -124,7 +137,7 @@
             </div>
             <div class="donate-other" id="donOtherWrap" hidden>
               <span class="donate-cur">US$</span>
-              <input type="number" id="donOther" min="1" inputmode="numeric" placeholder="Enter amount">
+              <input type="number" id="donOther" min="1" inputmode="numeric" placeholder="Enter amount" aria-label="Other donation amount">
             </div>
           </div>
           <button type="button" class="btn btn--primary donate-submit" id="donBtn">Donate US$10</button>

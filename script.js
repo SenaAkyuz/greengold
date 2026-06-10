@@ -17,29 +17,45 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
     });
   });
 
-  // ---------- Mega Menu (open on hover + keep on click for touch) ----------
+  // ---------- Mega Menu (open on hover + keep on click for touch; keyboard accessible) ----------
+  const setLiAria = (l)=>{ const la=l.querySelector(':scope > a'); if(la && l.querySelector('.mega')) la.setAttribute('aria-expanded', l.classList.contains('open') ? 'true':'false'); };
+  const closeOtherLis = (current)=>{ document.querySelectorAll('.nav>ul>li').forEach(o=>{ if(o!==current){ o.classList.remove('open'); setLiAria(o); } }); };
   document.querySelectorAll('.nav>ul>li').forEach(li=>{
     const hasMega = !!li.querySelector('.mega');
     let closeTimer;
-    li.addEventListener('mouseenter',()=>{ clearTimeout(closeTimer); li.classList.add('open'); });
+    li.addEventListener('mouseenter',()=>{ clearTimeout(closeTimer); li.classList.add('open'); setLiAria(li); });
     li.addEventListener('mouseleave',()=>{
-      if(hasMega){ closeTimer = setTimeout(()=>li.classList.remove('open'), 180); }  // grace period
+      if(hasMega){ closeTimer = setTimeout(()=>{ li.classList.remove('open'); setLiAria(li); }, 180); }  // grace period
       else { li.classList.remove('open'); }
     });
     const a = li.querySelector(':scope > a');
     if(a){
       a.addEventListener('click',e=>{
-        if(li.querySelector('.mega')){
+        if(hasMega){
           e.preventDefault();
           clearTimeout(closeTimer);
-          document.querySelectorAll('.nav>ul>li').forEach(o=>{ if(o!==li) o.classList.remove('open'); });
+          closeOtherLis(li);
           li.classList.toggle('open');
+          setLiAria(li);
         }
       });
+      if(hasMega){
+        a.addEventListener('keydown',e=>{
+          if(e.key==='Enter' || e.key===' ' || e.key==='Spacebar'){
+            e.preventDefault();
+            clearTimeout(closeTimer);
+            closeOtherLis(li);
+            li.classList.toggle('open');
+            setLiAria(li);
+          } else if(e.key==='Escape'){
+            li.classList.remove('open'); setLiAria(li); a.focus();
+          }
+        });
+      }
     }
   });
   document.addEventListener('click',e=>{
-    if(!e.target.closest('.nav')) document.querySelectorAll('.nav>ul>li.open').forEach(l=>l.classList.remove('open'));
+    if(!e.target.closest('.nav')) document.querySelectorAll('.nav>ul>li.open').forEach(l=>{ l.classList.remove('open'); setLiAria(l); });
   });
 
   // ---------- Hero Slider ----------
@@ -67,7 +83,8 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
 
   // ---------- Carbon Calculator ----------
   (function(){
-    const fmtTr = (n, dec=0) => n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+    const GG_LOC = document.documentElement.lang === 'tr' ? 'tr-TR' : 'en-US';
+    const fmtTr = (n, dec=0) => n.toLocaleString(GG_LOC,{minimumFractionDigits:dec,maximumFractionDigits:dec});
     const energySlider = document.getElementById('energySlider');
     const staffSlider = document.getElementById('staffSlider');
     const energyVal = document.getElementById('energyVal');
@@ -82,7 +99,10 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
 
     if(!energySlider || !staffSlider) return;   // calculator not present (sub-pages) -> skip
 
-    const periodLabels = { '1':'annual', '0.5':'semi-annual', '0.25':'quarterly', '0.0833':'monthly' };
+    const periodLabels = GG_LOC === 'tr-TR'
+      ? { '1':'yıllık', '0.5':'altı aylık', '0.25':'üç aylık', '0.0833':'aylık' }
+      : { '1':'annual', '0.5':'semi-annual', '0.25':'quarterly', '0.0833':'monthly' };
+    const defPeriod = GG_LOC === 'tr-TR' ? 'yıllık' : 'annual';
 
     function getActiveFactor(){
       const a = document.querySelector('.sector.active');
@@ -94,7 +114,7 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
     }
     function getPeriodLabel(){
       const a = document.querySelector('.period.active');
-      return a ? (periodLabels[a.dataset.mult] || 'annual') : 'annual';
+      return a ? (periodLabels[a.dataset.mult] || defPeriod) : defPeriod;
     }
 
     function recalc(){
@@ -143,7 +163,8 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
 
   // ---------- Stats Counter Animation ----------
   (function(){
-    const fmtTr = (n, dec) => n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+    const GG_LOC = document.documentElement.lang === 'tr' ? 'tr-TR' : 'en-US';
+    const fmtTr = (n, dec) => n.toLocaleString(GG_LOC,{minimumFractionDigits:dec,maximumFractionDigits:dec});
     const els = document.querySelectorAll('.stat__num[data-target]');
     if(!els.length) return;
     const animate = el => {
@@ -176,8 +197,10 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
     if(!total) return;                       // calculator not on this page
     const totalT = document.getElementById('cfcTotalT');
     let cfcChart = null;
+    const CFC_TR = document.documentElement.lang === 'tr';
+    const CFC_LOC = CFC_TR ? 'tr-TR' : 'en-US';
     const CFC_COLORS = ['#5cb85c','#f4d03f','#f5a623','#9aa0a6','#4a90e2'];
-    const CFC_LABELS = ['Car','Electricity','Natural Gas','Waste','Flights'];
+    const CFC_LABELS = CFC_TR ? ['Araç','Elektrik','Doğal Gaz','Atık','Uçuşlar'] : ['Car','Electricity','Natural Gas','Waste','Flights'];
     const num = id => { const el = document.getElementById(id); const v = el ? parseFloat(el.value) : 0; return (isFinite(v) && v > 0) ? v : 0; };
     const carType = () => { const el = document.getElementById('cfcCarType'); return el ? el.value : 'petrol'; };
 
@@ -191,7 +214,7 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
           responsive: true, maintainAspectRatio: false,
           plugins: {
             legend: { position: 'bottom', labels: { boxWidth: 12, padding: 12, font: { size: 12 } } },
-            tooltip: { callbacks: { label: (c) => c.label + ': ' + Math.round(c.parsed).toLocaleString('en-US') + ' kg' } }
+            tooltip: { callbacks: { label: (c) => c.label + ': ' + Math.round(c.parsed).toLocaleString(CFC_LOC) + ' kg' } }
           }
         }
       });
@@ -211,8 +234,8 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
         if(km > 0 && n > 0) flights += km * n * CF_FLIGHT.basePerKm * (CF_FLIGHT.classMult[cls] || 1);
       });
       const kg = vehicle + electricity + naturalGas + waste + flights; // all categories summed
-      total.textContent = Math.round(kg).toLocaleString('en-US');
-      if(totalT) totalT.innerHTML = '≈ ' + (kg/1000).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' t CO<sub>2</sub>/year';
+      total.textContent = Math.round(kg).toLocaleString(CFC_LOC);
+      if(totalT) totalT.innerHTML = '≈ ' + (kg/1000).toLocaleString(CFC_LOC,{minimumFractionDigits:1,maximumFractionDigits:1}) + (CFC_TR ? ' t CO<sub>2</sub>/yıl' : ' t CO<sub>2</sub>/year');
       if(cfcChart){ cfcChart.data.datasets[0].data = [vehicle, electricity, naturalGas, waste, flights]; cfcChart.update(); }
     }
 
@@ -280,4 +303,33 @@ const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, bu
     var rej = document.getElementById('cookieReject');
     if(acc) acc.addEventListener('click', function(){ choose('accept'); });
     if(rej) rej.addEventListener('click', function(){ choose('reject'); });
+  })();
+
+  // ---------- Mobile hamburger menu (10B FIX 1) ----------
+  (function(){
+    var t = document.getElementById('navToggle');
+    var nav = document.getElementById('primaryNav');
+    if(!t || !nav) return;
+    function setOpen(o){
+      nav.classList.toggle('is-open', o);
+      t.setAttribute('aria-expanded', o ? 'true':'false');
+      t.setAttribute('aria-label', o ? 'Close menu':'Open menu');
+    }
+    t.addEventListener('click', function(){ setOpen(!nav.classList.contains('is-open')); });
+    nav.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
+  })();
+
+  // ---------- Language switcher (11a, 11d override-destekli) ----------
+  (function(){
+    var sw=document.querySelector('.lang-switch'); if(!sw) return;
+    var p=location.pathname.replace(/\/index(\.html)?$/,'/').replace(/\.html$/,'');
+    if(p==='') p='/';
+    var isTR = p==='/tr' || p.indexOf('/tr/')===0;
+    var en = sw.getAttribute('data-en-href') || (isTR ? (p.replace(/^\/tr/,'')||'/') : p);
+    var tr = sw.getAttribute('data-tr-href') || (isTR ? p : (p==='/' ? '/tr' : '/tr'+p));
+    var ea=sw.querySelector('[data-lang="en"]'), ta=sw.querySelector('[data-lang="tr"]');
+    if(ea) ea.setAttribute('href', en);
+    if(ta) ta.setAttribute('href', tr);
+    (isTR?ta:ea) && (isTR?ta:ea).classList.add('is-active');
   })();

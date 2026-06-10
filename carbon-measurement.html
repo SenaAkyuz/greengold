@@ -7,6 +7,9 @@
 <meta name="description" content="Measure your company's Scope 1, 2, and 3 emissions in line with the GHG Protocol and ISO 14064 from a single carbon measurement platform." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/carbon-measurement" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/carbon-measurement">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/carbon-measurement">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/carbon-measurement">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/carbon-measurement">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/carbon-measurement">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -85,13 +98,13 @@
 </header>
 
 <!-- =================== SUBHERO =================== -->
-<section class="subhero">
+<section class="subhero" id="main">
   <div class="container subhero__inner">
     <div class="crumb"><a href="/">Home</a> &nbsp;›&nbsp; Carbon Measurement Platform</div>
     <h1>Measure your company's carbon footprint <strong>from a single platform</strong></h1>
     <p>Automatically calculate your Scope 1, 2, and 3 emissions in compliance with the GHG Protocol and ISO 14064. ERP, invoices, meters, and supplier surveys — a single data flow, an audit-ready report. <em style="color:#7be6cd;font-style:normal;font-weight:600">Measure once, manage everywhere.</em></p>
     <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap">
-      <a href="/#calc" class="btn btn--gold" style="padding:14px 26px;font-size:15px">Calculate for Free</a>
+      <a href="/carbon-footprint-calculator" class="btn btn--gold" style="padding:14px 26px;font-size:15px">Calculate for Free</a>
       <a href="mailto:info@greengoldfondation.com" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4);padding:14px 26px;font-size:15px">15-Minute Demo</a>
     </div>
   </div>
@@ -176,7 +189,7 @@
 
 <!-- =================== PROCESS TIMELINE =================== -->
 <section class="block" style="background:var(--bg-soft);padding-top:80px;padding-bottom:80px">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start">
+  <div class="container cm-onboard">
     <div>
       <span class="eyebrow" style="display:inline-block;font-size:11.5px;font-weight:700;color:var(--green-dark);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px">Onboarding journey</span>
       <h2 style="font-size:34px;font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:14px">From zero to a live dashboard <strong style="font-weight:700;color:var(--green-dark)">in 14 days</strong></h2>
@@ -313,7 +326,7 @@
         <h3>Estimate your carbon footprint <strong>in 15 minutes</strong></h3>
         <p>Get a preliminary estimate from your industry, energy consumption, and employee count. Then, if you wish, a Green Gold Foundation consultant can call you and plan the move to a full calculation.</p>
         <div class="cta-panel__btns">
-          <a href="/#calc" class="btn btn--gold" style="padding:14px 26px">Use the Calculator →</a>
+          <a href="/carbon-footprint-calculator" class="btn btn--gold" style="padding:14px 26px">Use the Calculator →</a>
           <a href="mailto:info@greengoldfondation.com" class="btn btn--ghost" style="color:#fff;border-color:rgba(255,255,255,.4);padding:14px 26px">Get a Detailed Demo</a>
         </div>
       </div>

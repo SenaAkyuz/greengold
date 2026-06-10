@@ -7,6 +7,9 @@
 <meta name="description" content="Legal notice and site ownership information for Green Gold Foundation." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/legal-notice" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/legal-notice">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/legal-notice">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/legal-notice">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/legal-notice">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/legal-notice">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -84,7 +97,7 @@
   </div>
 </header>
 
-<main class="about">
+<main id="main" class="about">
 
   <!-- HERO -->
   <section class="about-hero">
@@ -94,7 +107,7 @@
     <div class="container about-hero__inner">
       <span class="about-eyebrow">LEGAL</span>
       <h1 class="about-h1">Legal Notice</h1>
-      <p class="about-lead">Last updated: [___]</p>
+      <p class="about-lead">Last updated: 9 June 2026</p>
     </div>
   </section>
 
@@ -102,15 +115,15 @@
     <div class="container">
       <div class="legal-page">
         <h2>Site owner and operator</h2>
-        <p>Green Gold Foundation [legal entity name — to be confirmed]<br>
+        <p>Green Gold Foundation<br>
         Address: Boulevard du 30 Juin, Immeuble Crown Tower, Kinshasa, Democratic Republic of the Congo<br>
         Email: <a href="mailto:info@greengoldfondation.com">info@greengoldfondation.com</a> · Phone: (+243) 829 000 828</p>
 
         <h2>Registration details</h2>
-        <p>[Registration / legal entity details — to be completed]</p>
+        <p>Green Gold Foundation is a non-profit organisation established to protect tropical forests in the Congo Basin. Official registration and legal-entity details are available on request.</p>
 
         <h2>Responsible for content</h2>
-        <p>[Name / role of person responsible for content — to be completed]</p>
+        <p>Responsible for content: Green Gold Foundation, represented by its Board of Directors, at the address above.</p>
 
         <h2>Disclaimer</h2>
         <p>The content of this website has been prepared with care and in good faith. However, we make no guarantee as to the accuracy, completeness, or timeliness of the information provided. This website may contain links to external sites that are not under our control; we accept no responsibility for their content.</p>

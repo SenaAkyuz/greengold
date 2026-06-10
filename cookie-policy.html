@@ -7,6 +7,9 @@
 <meta name="description" content="How Green Gold Foundation uses cookies and similar technologies." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/cookie-policy" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/cookie-policy">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/cookie-policy">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/cookie-policy">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/cookie-policy">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/cookie-policy">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -84,7 +97,7 @@
   </div>
 </header>
 
-<main class="about">
+<main id="main" class="about">
 
   <!-- HERO -->
   <section class="about-hero">
@@ -94,7 +107,7 @@
     <div class="container about-hero__inner">
       <span class="about-eyebrow">LEGAL</span>
       <h1 class="about-h1">Cookie Policy</h1>
-      <p class="about-lead">Last updated: [___]</p>
+      <p class="about-lead">Last updated: 9 June 2026</p>
     </div>
   </section>
 
@@ -112,7 +125,11 @@
           <li>Analytics / performance cookies: help us understand how visitors use the site so we can improve it (e.g., Google Analytics). Enabled only with your consent.</li>
           <li>Functionality and third-party cookies: some features rely on third-party services (e.g., Google Fonts) that may set cookies or process technical data.</li>
         </ul>
-        <p>[A detailed cookie table will be completed once analytics tools are finalized.]</p>
+        <p>We use the following categories of cookies:</p>
+        <ul>
+          <li><strong>Strictly necessary cookies</strong>, including a cookie that stores your cookie-consent preference (<code>gg_cookie_consent</code>). These are always active and cannot be disabled.</li>
+          <li><strong>Analytics cookies</strong>, which help us understand how visitors use the website. These are set only after you give consent and can be withdrawn at any time. When enabled, we use Google Analytics for this purpose.</li>
+        </ul>
 
         <h2>3. Your choices</h2>
         <p>When you first visit, a banner lets you accept or reject non-essential cookies. You can change your choice at any time through your browser settings or by clearing your cookies. Blocking some cookies may affect how the site works.</p>

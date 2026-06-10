@@ -10,6 +10,9 @@
 <meta name="description" content="Green Gold Wheels brings carbon offsetting into vehicle ownership and mobility through verified, forestry-based carbon credits." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/green-gold-wheels" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/green-gold-wheels">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/green-gold-wheels">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/green-gold-wheels">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -27,6 +30,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -36,6 +40,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/green-gold-wheels">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/green-gold-wheels">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -53,7 +62,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0" class="active">Projects <span class="chev"></span></a>
@@ -87,7 +100,7 @@
   </div>
 </header>
 
-<main class="ggp ggp--wheels">
+<main id="main" class="ggp ggp--wheels">
 
   <!-- =================== HERO =================== -->
   <section class="ggp-hero">
@@ -121,7 +134,7 @@
         <p class="ggp-vision__lead">Our vision is for every car on the road to contribute to a greener planet. We envision a future where offsetting carbon emissions is a standard component of vehicle ownership, creating a culture of responsibility among consumers and manufacturers.</p>
       </div>
       <div class="ggp-vision__art ggp-reveal">
-        <img class="ggp-vision__img" src="wheels_alt3.avif" alt="">
+        <img class="ggp-vision__img" src="wheels_alt3.avif" alt="Low-carbon mobility supporting forest conservation">
       </div>
     </div>
   </section>

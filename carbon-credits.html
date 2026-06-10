@@ -7,6 +7,9 @@
 <meta name="description" content="Offset your carbon footprint with verified carbon credits from VCS, Gold Standard, ACR, and Plan Vivo certified projects." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/carbon-credits" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/carbon-credits">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/carbon-credits">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/carbon-credits">
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/carbon-credits">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/carbon-credits">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -85,7 +98,7 @@
 </header>
 
 <!-- =================== SUBHERO =================== -->
-<section class="subhero">
+<section class="subhero" id="main">
   <div class="container subhero__inner">
     <div class="crumb"><a href="/">Home</a> &nbsp;›&nbsp; Carbon Credit Marketplace</div>
     <h1>Offset carbon with <strong>verified credits</strong></h1>

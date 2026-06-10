@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karbon Ayak İzi Hesaplayıcı — Green Gold Foundation</title>
+<meta name="description" content="Ücretsiz karbon ayak izi hesaplayıcımızla araç, enerji, doğal gaz, atık ve uçuşlardan kaynaklanan yıllık CO2 emisyonlarınızı tahmin edin." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://www.foundationgreengold.org/tr/carbon-footprint-calculator" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/carbon-footprint-calculator">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/carbon-footprint-calculator">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/carbon-footprint-calculator">
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Green Gold Foundation" />
+<meta property="og:title" content="Karbon Ayak İzi Hesaplayıcı — Green Gold Foundation" />
+<meta property="og:description" content="Ücretsiz karbon ayak izi hesaplayıcımızla araç, enerji, doğal gaz, atık ve uçuşlardan kaynaklanan yıllık CO2 emisyonlarınızı tahmin edin." />
+<meta property="og:url" content="https://www.foundationgreengold.org/tr/carbon-footprint-calculator" />
+<meta property="og:image" content="https://www.foundationgreengold.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Karbon Ayak İzi Hesaplayıcı — Green Gold Foundation" />
+<meta name="twitter:description" content="Ücretsiz karbon ayak izi hesaplayıcımızla araç, enerji, doğal gaz, atık ve uçuşlardan kaynaklanan yıllık CO2 emisyonlarınızı tahmin edin." />
+<meta name="twitter:image" content="https://www.foundationgreengold.org/og-image.png" />
+<link rel="stylesheet" href="/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<!-- =================== TOP BAR =================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="mailto:info@greengoldfondation.com">İletişim</a>
+    </div>
+    <div class="right">
+      <a href="tel:+243829000828">İletişim numarası: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Dil">
+        <a data-lang="en" href="/carbon-footprint-calculator">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/carbon-footprint-calculator">TR</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="header">
+  <div class="container header__bar">
+    <a href="/tr" class="logo" lang="en" aria-label="Green Gold Foundation">
+      <img class="logo__img" src="/logo_final_r1.avif" alt="Green Gold Foundation" width="46" height="46">
+      <span class="logo__word">GREEN GOLD<span>FOUNDATION</span></span>
+    </a>
+
+    <div class="seg" role="tablist" aria-label="Şirket tipi">
+      <button class="active" data-tab="kobi">KOBİ</button>
+      <button data-tab="kurumsal">KURUMSAL</button>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Ana menü">
+      <ul>
+        <li><a href="/tr/climate-membership">İklim Üyeliği</a></li>
+        <li><a role="button" tabindex="0">Projeler <span class="chev"></span></a>
+          <div class="mega">
+            <div class="feature">
+              <span class="tag">PROJELER</span>
+              <h5>Green Gold Foundation etki projeleri</h5>
+              <p>Mobilite ve konaklama alanlarındaki öncü sürdürülebilirlik girişimlerimizi keşfedin.</p>
+              <a class="btn btn--dark" href="/tr/green-gold-wings">Keşfet</a>
+            </div>
+            <div class="col-list">
+              <h4>Projelerimiz</h4>
+              <a href="/tr/green-gold-wings">Green Gold Wings</a>
+              <a href="/tr/green-gold-wheels">Green Gold Wheels</a>
+              <a href="/tr/green-gold-stay">Green Gold Stay</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/tr/mission">Misyon</a></li>
+        <li><a href="/tr/about-us">Hakkımızda</a></li>
+        <li><a href="/tr/take-action">Harekete Geç</a></li>
+        <li><a href="/tr/donate">Bağış Yap</a></li>
+        <li><a href="/tr/carbon-credits">Karbon Kredileri</a></li>
+        <li><a href="/tr/blog">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__cta">
+      <a href="mailto:info@greengoldfondation.com" class="btn btn--ghost">Demo Talep Et</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="block cfcpage-top">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">ARAÇ</span>
+        <h1>Karbon Ayak İzi <strong>Hesaplayıcı</strong></h1>
+        <p>Araç, enerji, atık ve uçuşlar genelinde tahmini yıllık CO<sub>2</sub> emisyonlarınızı ölçün.</p>
+      </div>
+      <div class="cfc-card">
+        <div class="cfc-body">
+          <div class="cfc-pane">
+            <div class="cfc-tabs" role="tablist" aria-label="Ayak izi kategorisi">
+              <button class="cfc-tab active" type="button" role="tab" aria-selected="true" data-cfc-tab="vehicle">🚗 Araç</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="electricity">⚡ Elektrik</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="gas">🔥 Doğal Gaz</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="waste">🗑️ Atık</button>
+              <button class="cfc-tab" type="button" role="tab" aria-selected="false" data-cfc-tab="flights">✈️ Uçuşlar</button>
+            </div>
+
+            <div class="cfc-panel active" data-cfc-panel="vehicle">
+              <div class="cfc-field">
+                <label for="cfcCarType">Araç türü</label>
+                <select id="cfcCarType" class="cfc-select">
+                  <option value="petrol">Benzin</option>
+                  <option value="diesel">Dizel</option>
+                  <option value="hybrid">Hibrit</option>
+                  <option value="electric">Elektrik</option>
+                </select>
+              </div>
+              <div class="cfc-field">
+                <label for="cfcCarKm">Yıllık kilometre</label>
+                <input id="cfcCarKm" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="ör. 12000" value="12000">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="electricity">
+              <div class="cfc-field">
+                <label for="cfcElec">Aylık elektrik kullanımı (kWh)</label>
+                <input id="cfcElec" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="ör. 300" value="300">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="gas">
+              <div class="cfc-field">
+                <label for="cfcGas">Aylık doğal gaz kullanımı (kWh)</label>
+                <input id="cfcGas" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="ör. 500" value="500">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="waste">
+              <div class="cfc-field">
+                <label for="cfcWaste">Haftalık genel atık (kg)</label>
+                <input id="cfcWaste" class="cfc-input" type="number" min="0" inputmode="numeric" placeholder="ör. 8" value="8">
+              </div>
+            </div>
+
+            <div class="cfc-panel" data-cfc-panel="flights">
+              <div class="cfc-flights" id="cfcFlights">
+                <div class="cfc-flight">
+                  <input class="cfc-input cfc-flight__km" type="number" min="0" inputmode="numeric" placeholder="Mesafe (km)" aria-label="Uçuş mesafesi (km)" value="1500">
+                  <input class="cfc-input cfc-flight__n" type="number" min="0" inputmode="numeric" placeholder="Uçuş Sayısı" aria-label="Uçuş sayısı" value="2">
+                  <select class="cfc-select cfc-flight__class" aria-label="Uçuş sınıfı">
+                    <option value="economy">Ekonomi</option>
+                    <option value="premium">Premium Ekonomi</option>
+                    <option value="business">Business</option>
+                    <option value="first">First</option>
+                  </select>
+                  <button type="button" class="cfc-flight__rm" aria-label="Uçuşu kaldır">✕</button>
+                </div>
+              </div>
+              <div class="cfc-flight-actions">
+                <button type="button" class="btn btn--ghost" id="cfcAddFlight">+ Uçuş Ekle</button>
+                <button type="button" class="btn btn--primary" id="cfcUpdate">Güncelle</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfc-result" aria-live="polite">
+            <div class="cfc-result__icon">🌍</div>
+            <div class="cfc-result__label">Toplam CO<sub>2</sub> Ayak İzi</div>
+            <div class="cfc-result__big"><span id="cfcTotal">0</span> <span class="cfc-result__unit">kg CO<sub>2</sub>/yıl</span></div>
+            <div class="cfc-result__t" id="cfcTotalT">≈ 0,0 t CO<sub>2</sub>/yıl</div>
+            <div class="cfc-chart"><canvas id="cfcChart"></canvas></div>
+            <div class="cfc-result__note">Hesaplamalar DEFRA UK Government Emission Factors 2025 temel alınarak yapılır.</div>
+          </div>
+        </div>
+      </div>
+      <p class="cfc-foot-note">Hesaplamalar DEFRA UK Government Emission Factors 2025 temel alınarak yapılır.</p>
+      <!-- SEO content sections (intro, what it measures, why, methodology, FAQ, CTA) to be added later -->
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="logo">
+          <img class="logo__img" src="/logo_final_r1.avif" alt="Green Gold Foundation" width="46" height="46">
+          <span class="logo__word">GREEN GOLD<span>FOUNDATION</span></span>
+        </div>
+        <p>Green Gold Foundation, Kongo Havzası'ndaki ormanları korur ve yerel toplulukları güçlendirir; şirketlerin karbon ayak izlerini ölçmelerine, raporlamalarına ve azaltmalarına yardımcı olur.</p>
+        <div class="footer__social">
+          <a href="https://x.com/greengoldglobal" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
+          <a href="https://www.linkedin.com/company/green-gold-foundation-global" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/foundationgreengold/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+          <a href="https://www.youtube.com/@GreenGoldFoundation" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div>
+        <h5>Çözümler</h5>
+        <ul>
+          <li><a href="/tr/carbon-measurement">Karbon Ölçümü</a></li>
+          <li><a href="/tr/carbon-credits">Karbon Kredisi Pazarı</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kaynaklar</h5>
+        <ul>
+          <li><a href="/tr/#faq">Sıkça Sorulan Sorular</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kurumsal</h5>
+        <ul>
+          <li><a href="/tr/about-us">Hakkımızda</a></li>
+          <li><a href="/tr/mission">Misyon ve Etki</a></li>
+          <li><a href="/tr/events">Etkinlikler</a></li>
+          <li><a href="mailto:info@greengoldfondation.com">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 Green Gold Foundation — Tüm hakları saklıdır.</div>
+      <div class="legal">
+        <a href="/tr/legal-notice">Yasal Bildirim</a>
+        <a href="/tr/privacy">Gizlilik ve Veri Koruma</a>
+        <a href="/tr/cookie-policy">Çerez Politikası</a>
+        <a href="/tr/terms">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== COOKIE CONSENT BANNER =================== -->
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <p class="cookie-banner__text">Bu siteyi çalıştırmak ve onayınızla trafiği analiz etmek için çerezler kullanıyoruz. <a href="/tr/cookie-policy">Çerez Politikamıza</a> bakın.</p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn btn--ghost" id="cookieReject">Zorunlu olmayanları reddet</button>
+    <button type="button" class="btn btn--primary" id="cookieAccept">Tümünü kabul et</button>
+  </div>
+</div>
+
+<script src="/script.js" defer></script>
+
+</body>
+</html>

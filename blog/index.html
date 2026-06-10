@@ -7,6 +7,9 @@
 <meta name="description" content="Stories, insights, and updates from Green Gold Foundation on climate, forestry, carbon credits, and community." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://www.foundationgreengold.org/blog" />
+<link rel="alternate" hreflang="en" href="https://www.foundationgreengold.org/blog">
+<link rel="alternate" hreflang="tr" href="https://www.foundationgreengold.org/tr/blog">
+<link rel="alternate" hreflang="x-default" href="https://www.foundationgreengold.org/blog">
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
@@ -24,6 +27,7 @@
 <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- =================== TOP BAR =================== -->
 <div class="topbar">
@@ -33,6 +37,11 @@
     </div>
     <div class="right">
       <a href="tel:+243829000828">Contact number: (+243) 829 000 828</a>
+      <div class="lang-switch" aria-label="Language">
+        <a data-lang="en" href="/blog">EN</a>
+        <span aria-hidden="true">/</span>
+        <a data-lang="tr" href="/tr/blog">TR</a>
+      </div>
     </div>
   </div>
 </div>
@@ -50,7 +59,11 @@
       <button data-tab="kurumsal">ENTERPRISE</button>
     </div>
 
-    <nav class="nav" aria-label="Main menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Main menu">
       <ul>
         <li><a href="/climate-membership">Climate Membership</a></li>
         <li><a role="button" tabindex="0">Projects <span class="chev"></span></a>
@@ -84,7 +97,7 @@
   </div>
 </header>
 
-<main class="blog-index">
+<main id="main" class="blog-index">
   <div class="blog-index-inner">
     <header class="blog-index-head">
       <h1>Blog</h1>
@@ -102,7 +115,7 @@
     <div class="blog-grid" id="blogGrid">
 
       <a class="blog-card" href="/blog/strengthening-brand-reputation-with-carbon-credits" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_00a605bd9dbc42fe8c81abca3ce9e6f9~mv2.jpg" alt="Strengthening Brand Reputation with Carbon Credits: The New Gold Standard of Sustainable Communication"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_00a605bd9dbc42fe8c81abca3ce9e6f9.jpg" alt="Strengthening Brand Reputation with Carbon Credits: The New Gold Standard of Sustainable Communication"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">Strengthening Brand Reputation with Carbon Credits: The New Gold Standard of Sustainable Communication</h3>
@@ -112,7 +125,7 @@
       </a>
 
       <a class="blog-card" href="/blog/green-gold-foundation-at-i4c-2026-singapore" data-category="community">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_df4336d8ecaf4936b8bd754c96bf0daf~mv2.jpeg" alt="Rebuilding the Future with Nature: Green Gold Foundation at I4C 2026 Singapore"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_df4336d8ecaf4936b8bd754c96bf0daf.jpg" alt="Rebuilding the Future with Nature: Green Gold Foundation at I4C 2026 Singapore"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Community</span>
           <h3 class="blog-card-title">Rebuilding the Future with Nature: Green Gold Foundation at I4C 2026 Singapore</h3>
@@ -122,7 +135,7 @@
       </a>
 
       <a class="blog-card" href="/blog/on-the-path-to-corporate-sustainability-why-producing-carbon-credits-is-a-strategic-move" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_11ceb0e5f16f4a0bb5939e38555451d4~mv2.jpg" alt="On the Path to Corporate Sustainability: Why Producing Carbon Credits is a Strategic Move"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_11ceb0e5f16f4a0bb5939e38555451d4.jpg" alt="On the Path to Corporate Sustainability: Why Producing Carbon Credits is a Strategic Move"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">On the Path to Corporate Sustainability: Why Producing Carbon Credits is a Strategic Move</h3>
@@ -132,7 +145,7 @@
       </a>
 
       <a class="blog-card" href="/blog/forest-carbon-credit-financing-a-new-era-for-the-green-economy" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_5ead9831591f43b48cb5695840759131~mv2.jpg" alt="Forest Carbon Credit Financing: A New Era for the Green Economy"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_5ead9831591f43b48cb5695840759131.jpg" alt="Forest Carbon Credit Financing: A New Era for the Green Economy"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">Forest Carbon Credit Financing: A New Era for the Green Economy</h3>
@@ -142,7 +155,7 @@
       </a>
 
       <a class="blog-card" href="/blog/corporate-carbon-neutrality-the-roadmap-from-measurement-to-offsetting" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_d1df1d7b8e0b47b4820e7bfc225153d8~mv2.jpg" alt="Corporate Carbon Neutrality: The Roadmap from Measurement to Offsetting"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_d1df1d7b8e0b47b4820e7bfc225153d8.jpg" alt="Corporate Carbon Neutrality: The Roadmap from Measurement to Offsetting"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">Corporate Carbon Neutrality: The Roadmap from Measurement to Offsetting</h3>
@@ -152,7 +165,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-stages-of-a-forest-carbon-credit-project-planning-verification-and-certification" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_007061ae9d6b4e6abec9a4e84b122716~mv2.jpg" alt="The Stages of a Forest Carbon Credit Project: Planning, Verification, and Certification"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_007061ae9d6b4e6abec9a4e84b122716.jpg" alt="The Stages of a Forest Carbon Credit Project: Planning, Verification, and Certification"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">The Stages of a Forest Carbon Credit Project: Planning, Verification, and Certification</h3>
@@ -162,7 +175,7 @@
       </a>
 
       <a class="blog-card" href="/blog/sustainable-investment-models-with-carbon-credits-the-green-finance-of-the-future" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_90e5720c5d5a4b84ad793e5c16612a02~mv2.jpg" alt="Sustainable Investment Models with Carbon Credits: The Green Finance of the Future"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_90e5720c5d5a4b84ad793e5c16612a02.jpg" alt="Sustainable Investment Models with Carbon Credits: The Green Finance of the Future"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">Sustainable Investment Models with Carbon Credits: The Green Finance of the Future</h3>
@@ -172,7 +185,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-place-of-carbon-credits-in-net-zero-strategies-the-reliable-path-to-achieving-the-goal" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_9a0620070d444e6982d5615688c12f78~mv2.jpg" alt="The Place of Carbon Credits in Net Zero Strategies: The Reliable Path to Achieving the Goal"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_9a0620070d444e6982d5615688c12f78.jpg" alt="The Place of Carbon Credits in Net Zero Strategies: The Reliable Path to Achieving the Goal"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">The Place of Carbon Credits in Net Zero Strategies: The Reliable Path to Achieving the Goal</h3>
@@ -182,7 +195,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-congo-basin-green-gold-ecosystem-investment-opportunity" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_019af59bd9a24a95ae17983f51ffb163~mv2.jpg" alt="The Congo Basin: The World's Most Valuable &quot;Green Gold&quot; Ecosystem and a Next-Generation Investment Opportunity"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_019af59bd9a24a95ae17983f51ffb163.jpg" alt="The Congo Basin: The World's Most Valuable &quot;Green Gold&quot; Ecosystem and a Next-Generation Investment Opportunity"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">The Congo Basin: The World's Most Valuable "Green Gold" Ecosystem and a Next-Generation Investment Opportunity</h3>
@@ -192,7 +205,7 @@
       </a>
 
       <a class="blog-card" href="/blog/how-luxury-hotels-are-redefining-sustainable-wellness" data-category="community">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_09d70554d09b441692d2d66129efb5d7~mv2.jpg" alt="How Luxury Hotels Are Redefining Sustainable Wellness?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_09d70554d09b441692d2d66129efb5d7.jpg" alt="How Luxury Hotels Are Redefining Sustainable Wellness?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Community</span>
           <h3 class="blog-card-title">How Luxury Hotels Are Redefining Sustainable Wellness?</h3>
@@ -202,7 +215,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-role-of-business-for-a-carbon-free-future-offset-and-beyond" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_6a72a46e6dcd46a7b41aa6f2c05514d7~mv2.jpg" alt="The Role of Business for a Carbon-Free Future: Offset and Beyond"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_6a72a46e6dcd46a7b41aa6f2c05514d7.jpg" alt="The Role of Business for a Carbon-Free Future: Offset and Beyond"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">The Role of Business for a Carbon-Free Future: Offset and Beyond</h3>
@@ -212,7 +225,7 @@
       </a>
 
       <a class="blog-card" href="/blog/how-are-nature-based-solutions-nbs-strengthened-by-carbon-credits" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_a7fb5bb96a4545928b33eb366b69b55a~mv2.jpg" alt="How Are Nature-Based Solutions (NbS) Strengthened by Carbon Credits?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_a7fb5bb96a4545928b33eb366b69b55a.jpg" alt="How Are Nature-Based Solutions (NbS) Strengthened by Carbon Credits?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">How Are Nature-Based Solutions (NbS) Strengthened by Carbon Credits?</h3>
@@ -222,7 +235,7 @@
       </a>
 
       <a class="blog-card" href="/blog/reforestation-and-forest-conservation-projects-in-africa" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_9aa4fd15b2a94b95bda346957cc89032~mv2.jpg" alt="Reforestation and Forest Conservation Projects in Africa: Contributions to Local Communities and Carbon Impact"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_9aa4fd15b2a94b95bda346957cc89032.jpg" alt="Reforestation and Forest Conservation Projects in Africa: Contributions to Local Communities and Carbon Impact"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">Reforestation and Forest Conservation Projects in Africa: Contributions to Local Communities and Carbon Impact</h3>
@@ -232,7 +245,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-iso-14064-why-is-it-critically-important-for-companies" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_dfd2546a5f3b41639a74a0b141ea0a3c~mv2.jpg" alt="What is ISO 14064? Why is it Critically Important for Companies?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_dfd2546a5f3b41639a74a0b141ea0a3c.jpg" alt="What is ISO 14064? Why is it Critically Important for Companies?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">What is ISO 14064? Why is it Critically Important for Companies?</h3>
@@ -242,7 +255,7 @@
       </a>
 
       <a class="blog-card" href="/blog/implementing-sustainable-forestry-practices-effectively-forestry-sustainability-techniques" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/86cdc9_8ba51a5ff18c4da992f0131adcb8bb50~mv2.png" alt="Implementing Sustainable Forestry Practices Effectively: Forestry Sustainability Techniques"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/86cdc9_8ba51a5ff18c4da992f0131adcb8bb50.jpg" alt="Implementing Sustainable Forestry Practices Effectively: Forestry Sustainability Techniques"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">Implementing Sustainable Forestry Practices Effectively: Forestry Sustainability Techniques</h3>
@@ -252,7 +265,7 @@
       </a>
 
       <a class="blog-card" href="/blog/carbon-pricing-the-investment-vehicle-of-the-future" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_c9cddb1a09574b939132347d9ddb2b9d~mv2.jpg" alt="Carbon Pricing: The Investment Vehicle of the Future?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_c9cddb1a09574b939132347d9ddb2b9d.jpg" alt="Carbon Pricing: The Investment Vehicle of the Future?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">Carbon Pricing: The Investment Vehicle of the Future?</h3>
@@ -262,7 +275,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-importance-of-environmental-education-insights" data-category="community">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/86cdc9_daca24b9449e41a5b905ce85524b8c73~mv2.png" alt="The Importance of Environmental Education Insights"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/86cdc9_daca24b9449e41a5b905ce85524b8c73.jpg" alt="The Importance of Environmental Education Insights"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Community</span>
           <h3 class="blog-card-title">The Importance of Environmental Education Insights</h3>
@@ -272,7 +285,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-role-of-sustainability-partnerships-in-eco-friendly-initiatives" data-category="community">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/86cdc9_be4e6e28f17e42f88ece76ce02e517f2~mv2.png" alt="The Role of Sustainability Partnerships in Eco-Friendly Initiatives: Unlocking the Power of Eco Partnerships Sustainability"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/86cdc9_be4e6e28f17e42f88ece76ce02e517f2.jpg" alt="The Role of Sustainability Partnerships in Eco-Friendly Initiatives: Unlocking the Power of Eco Partnerships Sustainability"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Community</span>
           <h3 class="blog-card-title">The Role of Sustainability Partnerships in Eco-Friendly Initiatives: Unlocking the Power of Eco Partnerships Sustainability</h3>
@@ -282,7 +295,7 @@
       </a>
 
       <a class="blog-card" href="/blog/how-to-obtain-a-carbon-neutral-certificate-a-step-by-step-guide-for-companies" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_08c7a37106b04e37980abddf996a173b~mv2.jpg" alt="How to Obtain a Carbon Neutral Certificate? A Step-by-Step Guide for Companies"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_08c7a37106b04e37980abddf996a173b.jpg" alt="How to Obtain a Carbon Neutral Certificate? A Step-by-Step Guide for Companies"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">How to Obtain a Carbon Neutral Certificate? A Step-by-Step Guide for Companies</h3>
@@ -292,7 +305,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-the-redd-mechanism-and-why-is-it-important-for-companies" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_0aeaf6e3bc0743eb9446dca32c611903~mv2.jpg" alt="What is the REDD+ Mechanism and Why is it Important for Companies?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_0aeaf6e3bc0743eb9446dca32c611903.jpg" alt="What is the REDD+ Mechanism and Why is it Important for Companies?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">What is the REDD+ Mechanism and Why is it Important for Companies?</h3>
@@ -302,7 +315,7 @@
       </a>
 
       <a class="blog-card" href="/blog/how-is-sustainability-performance-measured" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_a2821aff8f75426fa337bb9b36716a2c~mv2.jpg" alt="How is Sustainability Performance Measured? A Comprehensive Guide for Companies"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_a2821aff8f75426fa337bb9b36716a2c.jpg" alt="How is Sustainability Performance Measured? A Comprehensive Guide for Companies"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">How is Sustainability Performance Measured? A Comprehensive Guide for Companies</h3>
@@ -312,7 +325,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-role-of-the-congo-basin-in-the-global-carbon-cycle" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_5f139f864fb24266b7eda079bb878926~mv2.jpg" alt="The Role of the Congo Basin in the Global Carbon Cycle"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_5f139f864fb24266b7eda079bb878926.jpg" alt="The Role of the Congo Basin in the Global Carbon Cycle"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">The Role of the Congo Basin in the Global Carbon Cycle</h3>
@@ -322,7 +335,7 @@
       </a>
 
       <a class="blog-card" href="/blog/carbon-credits-and-green-reporting-cdp-gri-and-sbti-standards" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_9a23859f0e5441e8bf61dce665af7baf~mv2.jpg" alt="Carbon Credits and Green Reporting: CDP, GRI and SBTi Standards"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_9a23859f0e5441e8bf61dce665af7baf.jpg" alt="Carbon Credits and Green Reporting: CDP, GRI and SBTi Standards"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">Carbon Credits and Green Reporting: CDP, GRI and SBTi Standards</h3>
@@ -332,7 +345,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-a-corporate-carbon-strategy-a-success-guide-for-companies" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_1d7ec30e1a1f4281ac76d27843eedba2~mv2.jpg" alt="What is a Corporate Carbon Strategy? A Success Guide for Companies"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_1d7ec30e1a1f4281ac76d27843eedba2.jpg" alt="What is a Corporate Carbon Strategy? A Success Guide for Companies"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">What is a Corporate Carbon Strategy? A Success Guide for Companies</h3>
@@ -342,7 +355,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-cbam-why-is-it-of-critical-importance-for-companies" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_d933e24061e1459b984c64dc4bd9eb56~mv2.jpg" alt="What is CBAM? Why is it of critical importance for companies?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_d933e24061e1459b984c64dc4bd9eb56.jpg" alt="What is CBAM? Why is it of critical importance for companies?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">What is CBAM? Why is it of critical importance for companies?</h3>
@@ -352,7 +365,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-vcu-carbon-credit-and-how-to-obtain-it-a-comprehensive-guide-for-companies" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_dd6daa795ea44f3e9d2b5977b6119e52~mv2.jpg" alt="What is VCU Carbon Credit and How to Obtain It? A Comprehensive Guide for Companies"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_dd6daa795ea44f3e9d2b5977b6119e52.jpg" alt="What is VCU Carbon Credit and How to Obtain It? A Comprehensive Guide for Companies"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">What is VCU Carbon Credit and How to Obtain It? A Comprehensive Guide for Companies</h3>
@@ -362,7 +375,7 @@
       </a>
 
       <a class="blog-card" href="/blog/esg-and-carbon-credits-investors-new-priority" data-category="carbon-credits">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_aff1b59dd3484c2e9105d68a9c37b9eb~mv2.jpg" alt="ESG and Carbon Credits: Investors New Priority"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_aff1b59dd3484c2e9105d68a9c37b9eb.jpg" alt="ESG and Carbon Credits: Investors New Priority"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Carbon Credits</span>
           <h3 class="blog-card-title">ESG and Carbon Credits: Investors New Priority</h3>
@@ -372,7 +385,7 @@
       </a>
 
       <a class="blog-card" href="/blog/the-role-of-forests-in-carbon-markets-from-nature-to-financial-value" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_def3e257f0da4d0fad02f6336ac1c730~mv2.jpg" alt="The Role of Forests in Carbon Markets: From Nature to Financial Value"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_def3e257f0da4d0fad02f6336ac1c730.jpg" alt="The Role of Forests in Carbon Markets: From Nature to Financial Value"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">The Role of Forests in Carbon Markets: From Nature to Financial Value</h3>
@@ -382,7 +395,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-are-forest-carbon-credits-and-how-do-they-work" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/f1f084_99a342d851fd4f17bc247d62e2aa83bb~mv2.jpg" alt="What Are Forest Carbon Credits and How Do They Work?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/f1f084_99a342d851fd4f17bc247d62e2aa83bb.jpg" alt="What Are Forest Carbon Credits and How Do They Work?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">What Are Forest Carbon Credits and How Do They Work?</h3>
@@ -392,7 +405,7 @@
       </a>
 
       <a class="blog-card" href="/blog/key-drivers-of-forest-conservation-efforts" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/86cdc9_bdadcbcaa6364c1a9946447a09c6c7e2~mv2.png" alt="Key Drivers of Forest Conservation Efforts"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/86cdc9_bdadcbcaa6364c1a9946447a09c6c7e2.jpg" alt="Key Drivers of Forest Conservation Efforts"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">Key Drivers of Forest Conservation Efforts</h3>
@@ -402,7 +415,7 @@
       </a>
 
       <a class="blog-card" href="/blog/advancing-sustainable-air-travel-options" data-category="community">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/86cdc9_7070547960cc43338c6ba32f9164642b~mv2.png" alt="Advancing Sustainable Air Travel Options"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/86cdc9_7070547960cc43338c6ba32f9164642b.jpg" alt="Advancing Sustainable Air Travel Options"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Community</span>
           <h3 class="blog-card-title">Advancing Sustainable Air Travel Options</h3>
@@ -412,7 +425,7 @@
       </a>
 
       <a class="blog-card" href="/blog/carbon-footprint-and-climate-change-connections-and-solutions" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_64411394ac7a4f15944469ef51785959~mv2.jpg" alt="Carbon Footprint and Climate Change: Connections and Solutions"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_64411394ac7a4f15944469ef51785959.jpg" alt="Carbon Footprint and Climate Change: Connections and Solutions"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">Carbon Footprint and Climate Change: Connections and Solutions</h3>
@@ -422,7 +435,7 @@
       </a>
 
       <a class="blog-card" href="/blog/corporate-carbon-footprint-sustainable-solutions-for-businesses" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_c6e8c4b008104d1eb4ebcc587fbb4a8b~mv2.jpg" alt="Corporate Carbon Footprint: Sustainable Solutions for Businesses"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_c6e8c4b008104d1eb4ebcc587fbb4a8b.jpg" alt="Corporate Carbon Footprint: Sustainable Solutions for Businesses"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">Corporate Carbon Footprint: Sustainable Solutions for Businesses</h3>
@@ -432,7 +445,7 @@
       </a>
 
       <a class="blog-card" href="/blog/2025-climate-summit-has-begun" data-category="community">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_02a06600fd0b4e3c90bb84f953d2a702~mv2.jpg" alt="2025 Climate Summit Has Begun"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_02a06600fd0b4e3c90bb84f953d2a702.jpg" alt="2025 Climate Summit Has Begun"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Community</span>
           <h3 class="blog-card-title">2025 Climate Summit Has Begun</h3>
@@ -442,7 +455,7 @@
       </a>
 
       <a class="blog-card" href="/blog/individual-carbon-footprint-awareness-and-responsibility" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_6886079e39504763b39324b24f3159a5~mv2.webp" alt="Individual Carbon Footprint: Awareness and Responsibility"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_6886079e39504763b39324b24f3159a5.jpg" alt="Individual Carbon Footprint: Awareness and Responsibility"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">Individual Carbon Footprint: Awareness and Responsibility</h3>
@@ -452,7 +465,7 @@
       </a>
 
       <a class="blog-card" href="/blog/climate-change-is-the-future-of-our-planet-in-danger" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_65ebe0a5a0a34661a8aa1faf4c1b3d77~mv2.webp" alt="Climate Change: Is the Future of Our Planet in Danger?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_65ebe0a5a0a34661a8aa1faf4c1b3d77.jpg" alt="Climate Change: Is the Future of Our Planet in Danger?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">Climate Change: Is the Future of Our Planet in Danger?</h3>
@@ -462,7 +475,7 @@
       </a>
 
       <a class="blog-card" href="/blog/10-ways-to-reduce-your-carbon-footprint-at-home-take-steps-toward-a-sustainable-life" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_47413401a81a4709987f0362f5552b7c~mv2.jpg" alt="10 Ways to Reduce Your Carbon Footprint at Home: Take Steps Toward a Sustainable Life"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_47413401a81a4709987f0362f5552b7c.jpg" alt="10 Ways to Reduce Your Carbon Footprint at Home: Take Steps Toward a Sustainable Life"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">10 Ways to Reduce Your Carbon Footprint at Home: Take Steps Toward a Sustainable Life</h3>
@@ -472,7 +485,7 @@
       </a>
 
       <a class="blog-card" href="/blog/your-hidden-carbon-footprint-how-daily-habits-impact-the-climate" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_4d06922b765e4dedac04ad97b66b0ebe~mv2.jpg" alt="Your Hidden Carbon Footprint: How Daily Habits Impact the Climate"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_4d06922b765e4dedac04ad97b66b0ebe.jpg" alt="Your Hidden Carbon Footprint: How Daily Habits Impact the Climate"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">Your Hidden Carbon Footprint: How Daily Habits Impact the Climate</h3>
@@ -482,7 +495,7 @@
       </a>
 
       <a class="blog-card" href="/blog/forests-as-carbon-sinks-why-the-loss-of-the-planet-s-lifeline-is-dangerous" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_e495669c9fec44c9b59405e52cb59a1b~mv2.jpg" alt="Forests as Carbon Sinks: Why the Loss of the Planet's Lifeline Is Dangerous"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_e495669c9fec44c9b59405e52cb59a1b.jpg" alt="Forests as Carbon Sinks: Why the Loss of the Planet's Lifeline Is Dangerous"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">Forests as Carbon Sinks: Why the Loss of the Planet's Lifeline Is Dangerous</h3>
@@ -492,7 +505,7 @@
       </a>
 
       <a class="blog-card" href="/blog/effective-strategies-for-sustainable-forest-management" data-category="forestry">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/86cdc9_eca3a7ff0e9d4b6298adfc21e4bb615d~mv2.png" alt="Effective Strategies for Sustainable Forest Management"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/86cdc9_eca3a7ff0e9d4b6298adfc21e4bb615d.jpg" alt="Effective Strategies for Sustainable Forest Management"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Forestry</span>
           <h3 class="blog-card-title">Effective Strategies for Sustainable Forest Management</h3>
@@ -502,7 +515,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-climate-change" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_d4cea330502840d99b8eabad31ddecca~mv2.jpg" alt="What is Climate Change?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_d4cea330502840d99b8eabad31ddecca.jpg" alt="What is Climate Change?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">What is Climate Change?</h3>
@@ -512,7 +525,7 @@
       </a>
 
       <a class="blog-card" href="/blog/what-is-a-carbon-footprint" data-category="climate">
-        <div class="blog-card-media"><img loading="lazy" src="https://static.wixstatic.com/media/5a5c9f_0c2cf566afd84f71973654af7f6c7e24~mv2.jpg" alt="What is a Carbon Footprint?"></div>
+        <div class="blog-card-media"><img loading="lazy" src="/blog/img/5a5c9f_0c2cf566afd84f71973654af7f6c7e24.jpg" alt="What is a Carbon Footprint?"></div>
         <div class="blog-card-body">
           <span class="blog-card-cat">Climate</span>
           <h3 class="blog-card-title">What is a Carbon Footprint?</h3>

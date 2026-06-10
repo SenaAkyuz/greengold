@@ -11,3 +11,8 @@ prompts/
 .DS_Store
 Thumbs.db
 *.log
+
+# Dev/build helpers (not part of the site)
+build_tr_blog.js
+_trraw/
+header-slides/_orig/
