@@ -639,6 +639,12 @@
   .logo-wall__cell:nth-child(3n){border-right:1px solid var(--line)}
   .logo-wall__cell:nth-child(2n){border-right:0}
   .stat__num{font-size:38px}
+  /* Partner logoları (sektörün önde gelenleri): telefonda tek sütun, geniş logolar net */
+  .logo-wall__rows--partners{grid-template-columns:1fr}
+  .logo-wall__rows--partners .logo-wall__cell{height:78px;padding:0 16px;border-right:0;border-bottom:1px solid var(--line)}
+  .logo-wall__rows--partners .logo-wall__cell:last-child{border-bottom:0}
+  .logo-wall__rows--partners .partner-logo{height:36px;max-width:80%}
+  .logo-wall__rows--partners .partner-logo--lg{height:48px;max-width:84%}
 }
 
 /* =========================================================
