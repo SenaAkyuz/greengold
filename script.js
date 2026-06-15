@@ -9,13 +9,13 @@ const CF_FACTORS = {
 };
 const CF_FLIGHT = { basePerKm: 0.15, classMult: { economy: 1.0, premium: 1.6, business: 2.9, first: 4.0 } }; // kg CO2e/passenger-km (economy) + DEFRA class multipliers
 
-  // ---------- Tabs (Bireysel / Kurumsal) ----------
-  document.querySelectorAll('.seg button').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+  // ---------- Tabs (Bireysel / Kurumsal) — KALDIRILDI: header'daki SME/ENTERPRISE toggle yerine ESG Platform butonu kondu (13_esg). ----------
+  // document.querySelectorAll('.seg button').forEach(btn=>{
+  //   btn.addEventListener('click',()=>{
+  //     document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
+  //     btn.classList.add('active');
+  //   });
+  // });
 
   // ---------- Mega Menu (open on hover + keep on click for touch; keyboard accessible) ----------
   const setLiAria = (l)=>{ const la=l.querySelector(':scope > a'); if(la && l.querySelector('.mega')) la.setAttribute('aria-expanded', l.classList.contains('open') ? 'true':'false'); };
