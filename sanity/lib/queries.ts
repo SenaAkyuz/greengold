@@ -37,6 +37,16 @@ export function slugsQuery(loc: Locale) {
   return `*[${PUBLISHED} && ${localeExists(loc)}].slug.${loc}.current`;
 }
 
+// slug + last-modified for the dynamic sitemap (drafts/future already excluded).
+export function sitemapQuery(loc: Locale) {
+  return `*[${PUBLISHED} && ${localeExists(loc)}]{ "slug": slug.${loc}.current, "updatedAt": _updatedAt }`;
+}
+
+// Resolve a previous slug to the post's current slug (per locale), for 301s.
+export function previousSlugQuery(loc: Locale) {
+  return `*[_type == "post" && status == "published" && $slug in coalesce(previousSlugs.${loc}, [])][0].slug.${loc}.current`;
+}
+
 export function postQuery(loc: Locale) {
   const alt = otherLocale(loc);
   return `*[${PUBLISHED} && slug.${loc}.current == $slug][0]{

@@ -1,6 +1,27 @@
 export const SITE_URL = 'https://www.foundationgreengold.org';
 export const SITE_NAME = 'Green Gold Foundation';
 
+// The 16 preserved static sub-pages (home '' is handled separately). Each is
+// served for both locales: /<slug> (EN) and /tr/<slug> (TR).
+export const STATIC_PAGES = [
+  'about-us',
+  'carbon-credits',
+  'carbon-footprint-calculator',
+  'carbon-measurement',
+  'climate-membership',
+  'cookie-policy',
+  'donate',
+  'events',
+  'green-gold-stay',
+  'green-gold-wheels',
+  'green-gold-wings',
+  'legal-notice',
+  'mission',
+  'privacy',
+  'take-action',
+  'terms',
+];
+
 export type Locale = 'en' | 'tr';
 
 export function otherLocale(loc: Locale): Locale {
