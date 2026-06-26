@@ -35,21 +35,25 @@ export type Post = Card & {
   altSlug?: string;
 };
 
-// cache() dedupes the fetch across generateMetadata + the page render (same request).
+// All reads are tagged 'post' so the Sanity webhook's revalidateTag('post')
+// refreshes every blog page + the sitemap on publish. cache() also dedupes the
+// fetch across generateMetadata + the page render (same request).
+const POST_TAG = { next: { tags: ['post'] } };
+
 export const getPost = cache(
   (loc: Locale, slug: string): Promise<Post | null> =>
-    client.fetch(postQuery(loc), { slug }),
+    client.fetch(postQuery(loc), { slug }, POST_TAG),
 );
 
 export const getIndexPosts = cache(
-  (loc: Locale): Promise<Card[]> => client.fetch(indexQuery(loc)),
+  (loc: Locale): Promise<Card[]> => client.fetch(indexQuery(loc), {}, POST_TAG),
 );
 
 export const getRelated = cache(
   (loc: Locale, category: string, slug: string): Promise<Card[]> =>
-    client.fetch(relatedQuery(loc), { category, slug }),
+    client.fetch(relatedQuery(loc), { category, slug }, POST_TAG),
 );
 
 export const getSlugs = cache(
-  (loc: Locale): Promise<string[]> => client.fetch(slugsQuery(loc)),
+  (loc: Locale): Promise<string[]> => client.fetch(slugsQuery(loc), {}, POST_TAG),
 );

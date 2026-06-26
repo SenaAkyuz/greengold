@@ -9,8 +9,8 @@ type Row = { slug: string; updatedAt?: string };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [en, tr] = await Promise.all([
-    client.fetch<Row[]>(sitemapQuery('en')),
-    client.fetch<Row[]>(sitemapQuery('tr')),
+    client.fetch<Row[]>(sitemapQuery('en'), {}, { next: { tags: ['post'] } }),
+    client.fetch<Row[]>(sitemapQuery('tr'), {}, { next: { tags: ['post'] } }),
   ]);
 
   // 34 preserved static pages (home + 16 sub-pages, EN + TR).
