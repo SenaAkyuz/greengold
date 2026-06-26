@@ -26,3 +26,6 @@ next-env.d.ts
 
 # Local env (never commit secrets)
 .env*.local
+
+# Faz 5 migration source (temp, extracted from git)
+_msrc/
