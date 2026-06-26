@@ -15,4 +15,14 @@ Thumbs.db
 # Dev/build helpers (not part of the site)
 build_tr_blog.js
 _trraw/
-header-slides/_orig/
+public/header-slides/_orig/
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+.turbo
+
+# Local env (never commit secrets)
+.env*.local
