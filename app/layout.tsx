@@ -17,9 +17,14 @@ export const metadata: Metadata = {
   },
 };
 
+// suppressHydrationWarning: the TR blog layout sets <html lang="tr"> client-side
+// (via an inline script, before paint) while the server renders the default
+// "en". That intentional attribute difference is exactly what
+// suppressHydrationWarning is for — it scopes to <html>'s own attributes only,
+// so real mismatches deeper in the tree are still reported.
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
