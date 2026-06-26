@@ -142,6 +142,18 @@ export const post = defineType({
       initialValue: 'Green Gold Foundation',
     }),
     defineField({
+      name: 'readingMinutes',
+      title: 'Okuma süresi (dakika)',
+      type: 'object',
+      group: 'settings',
+      description: 'Boşsa gövdeden tahmin edilir (~200 kelime/dk).',
+      options: { columns: 2 },
+      fields: [
+        defineField({ name: 'en', title: 'EN', type: 'number' }),
+        defineField({ name: 'tr', title: 'TR', type: 'number' }),
+      ],
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Yayın tarihi',
       type: 'datetime',
