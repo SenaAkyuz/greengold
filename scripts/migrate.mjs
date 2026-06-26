@@ -1,7 +1,7 @@
 // Faz 5 migration. DRY-RUN by default (parses _msrc, writes NOTHING to Sanity).
 //   node scripts/migrate.mjs --dry     -> parse + manifest (ADIM B)
 //   node scripts/migrate.mjs --write   -> real upload (ADIM C, only after approval)
-import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, writeFileSync, createReadStream } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, basename } from 'node:path';
 import { JSDOM } from 'jsdom';
@@ -256,5 +256,109 @@ console.log(manifestText);
 console.log(`\n[dry-run] wrote _msrc/manifest.txt and _msrc/docs.json. No Sanity writes.`);
 
 if (WRITE) {
-  console.log('\n--write requested but ADIM C not yet implemented/approved. Aborting.');
+  const { createClient } = await import('@sanity/client');
+  const env = {};
+  for (const line of readFileSync(join(root, '.env.local'), 'utf8').split(/\r?\n/)) {
+    const m = /^([A-Z0-9_]+)=(.*)$/.exec(line.trim());
+    if (m) env[m[1]] = m[2];
+  }
+  const client = createClient({
+    projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: env.NEXT_PUBLIC_SANITY_DATASET,
+    apiVersion: '2024-10-01',
+    token: env.SANITY_API_WRITE_TOKEN,
+    useCdn: false,
+  });
+
+  // 1) upload each unique image once (Sanity also dedupes by content hash).
+  //    The global og-image.png is NOT a blog asset → skipped (render falls back).
+  const toUpload = new Set();
+  const add = (b) => { if (b && b !== 'og-image.png') toUpload.add(b); };
+  for (const d of docs) {
+    for (const loc of ['en', 'tr']) {
+      const p = d[loc];
+      if (!p) continue;
+      if (p.heroImage) add(p.heroImage.src);
+      add(p.ogImage);
+      for (const blk of p.body) if (blk._type === 'image') add(blk._migrationSrc);
+    }
+  }
+  console.log(`\nUploading ${toUpload.size} images...`);
+  const assetMap = {};
+  let up = 0;
+  for (const b of toUpload) {
+    const path = join(MSRC, 'blog/img', b);
+    if (!existsSync(path)) { console.log(`  SKIP missing ${b}`); continue; }
+    const asset = await client.assets.upload('image', createReadStream(path), { filename: b });
+    assetMap[b] = asset._id;
+    if (++up % 10 === 0) console.log(`  ${up}/${toUpload.size}`);
+  }
+  console.log(`Uploaded ${up} images.`);
+
+  // 2) assemble + createOrReplace 45 documents (idempotent).
+  const imgRef = (b, alt) =>
+    b && assetMap[b]
+      ? { _type: 'image', asset: { _type: 'reference', _ref: assetMap[b] }, ...(alt !== undefined ? { alt } : {}) }
+      : undefined;
+  const loca = (e, t) => {
+    const o = {};
+    if (e !== undefined && e !== null) o.en = e;
+    if (t !== undefined && t !== null) o.tr = t;
+    return Object.keys(o).length ? o : undefined;
+  };
+  const finalizeBody = (blocks) =>
+    blocks
+      .map((blk) => {
+        if (blk._type === 'image') {
+          const ref = imgRef(blk._migrationSrc, blk.alt);
+          return ref ? { ...ref, _key: blk._key } : null;
+        }
+        return blk;
+      })
+      .filter(Boolean);
+
+  let created = 0;
+  for (const d of docs) {
+    const e = d.en;
+    const t = d.tr;
+    const doc = {
+      _id: d._id,
+      _type: 'post',
+      category: d.category,
+      author: d.author,
+      publishedAt: d.publishedAt,
+      status: 'published',
+      noIndex: false,
+    };
+    doc.title = loca(e?.title, t?.title);
+    doc.slug = loca(
+      e ? { _type: 'slug', current: e.slug } : undefined,
+      t ? { _type: 'slug', current: t.slug } : undefined,
+    );
+    doc.excerpt = loca(e?.excerpt, t?.excerpt);
+    doc.metaDescription = loca(e?.metaDescription, t?.metaDescription);
+    // metaTitle only when it differs from the title (else schema falls back to title).
+    const mt = loca(
+      e && e.metaTitle && e.metaTitle !== e.title ? e.metaTitle : undefined,
+      t && t.metaTitle && t.metaTitle !== t.title ? t.metaTitle : undefined,
+    );
+    if (mt) doc.metaTitle = mt;
+    const rm = loca(e?.readingMinutes, t?.readingMinutes);
+    if (rm) doc.readingMinutes = rm;
+    const hero = loca(
+      e?.heroImage ? imgRef(e.heroImage.src, e.heroImage.alt) : undefined,
+      t?.heroImage ? imgRef(t.heroImage.src, t.heroImage.alt) : undefined,
+    );
+    if (hero) doc.heroImage = hero;
+    const og = loca(
+      e?.ogImage && e.ogImage !== 'og-image.png' ? imgRef(e.ogImage) : undefined,
+      t?.ogImage && t.ogImage !== 'og-image.png' ? imgRef(t.ogImage) : undefined,
+    );
+    if (og) doc.ogImage = og;
+    doc.body = loca(e ? finalizeBody(e.body) : undefined, t ? finalizeBody(t.body) : undefined);
+
+    await client.createOrReplace(doc);
+    if (++created % 10 === 0) console.log(`  ${created}/${docs.length} docs`);
+  }
+  console.log(`Created/replaced ${created} documents.`);
 }
