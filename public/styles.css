@@ -1542,12 +1542,13 @@
 
 /* ---------- Board of Directors ---------- */
 .board-grid{display:grid;gap:24px;margin-top:26px}
-.board-card{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:center;max-width:880px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
-.board-card__photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;display:block}
+.board-card{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:stretch;width:100%;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.board-card__photo img{width:100%;aspect-ratio:762/806;object-fit:contain;background:#0c2212;border-radius:14px;display:block}
 .board-card__name{font-family:'Space Grotesk',system-ui,sans-serif;font-size:22px;font-weight:700;color:var(--navy)}
 .board-card__handle{font-size:14px;font-weight:600;color:var(--muted)}
 .board-card__role{font-size:12px;font-weight:700;color:var(--green-dark);text-transform:uppercase;letter-spacing:1px;margin:5px 0 14px}
 .board-card__body p{font-size:15px;line-height:1.75;color:#3b4f51}
+.board-card__body p.board-card__bio--pending{color:#b0bec0;font-style:italic}
 @media (max-width:680px){ .board-card{grid-template-columns:1fr;text-align:center} .board-card__photo{max-width:220px;margin:0 auto} }
 
 /* ---- Blog: single post ---- */
