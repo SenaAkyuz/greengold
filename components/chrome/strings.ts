@@ -53,6 +53,7 @@ export function getStrings(loc: Locale) {
         wings: `${p}/green-gold-wings`,
         wheels: `${p}/green-gold-wheels`,
         stay: `${p}/green-gold-stay`,
+        sea: `${p}/green-gold-sea`,
         mission: `${p}/mission`,
         about: `${p}/about-us`,
         takeAction: `${p}/take-action`,

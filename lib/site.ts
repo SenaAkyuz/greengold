@@ -22,6 +22,7 @@ export const STATIC_PAGES = [
   'cookie-policy',
   'donate',
   'events',
+  'green-gold-sea',
   'green-gold-stay',
   'green-gold-wheels',
   'green-gold-wings',

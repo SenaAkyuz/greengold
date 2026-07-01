@@ -67,6 +67,7 @@ export default function Header({ s, active }: { s: Strings; active?: 'blog' }) {
                   <a href={h.href.wings}>Green Gold Wings</a>
                   <a href={h.href.wheels}>Green Gold Wheels</a>
                   <a href={h.href.stay}>Green Gold Stay</a>
+                  <a href={h.href.sea}>Green Gold Sea</a>
                 </div>
               </div>
             </li>
